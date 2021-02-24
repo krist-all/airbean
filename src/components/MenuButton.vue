@@ -6,11 +6,10 @@
     </div>
     <div class="nav" v-else-if="!showNav">
       <Closeicon />
-      <router-link to="/">Home</router-link> |
-      <router-link to="/menu">Meny</router-link> |
-      <router-link to="/coffee">Vårt Kaffe</router-link> |
-      <router-link to="/profile">Profil</router-link> |
-      <router-link to="/status">Orderstatus</router-link> 
+      <router-link to="/menu"><h1>Meny</h1></router-link> 
+      <router-link to="/coffee"><h1>Vårt Kaffe</h1></router-link> 
+      <router-link to="/profile"><h1> Min Profil</h1></router-link> 
+      <router-link to="/status"><h1>Orderstatus</h1></router-link> 
     </div>
     </div>
   </div>
@@ -40,8 +39,8 @@ export default {
 }
 .nav {
   background-color: #2F2926;
-  color: white;
- 
 }
-
+h1{
+  color: white;
+}
 </style>
