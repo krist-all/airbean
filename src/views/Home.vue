@@ -2,7 +2,6 @@
   <div class="home">
   
     <MenuButton />
-    <p>Hejsan</p>
   </div>
 </template>
 

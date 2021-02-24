@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Menu from '../views/Menu.vue'
+import Coffee from '../views/Coffee.vue'
+import Profile from '../views/Profile.vue'
+import Status from '../views/Status.vue'
 
 Vue.use(VueRouter)
 
@@ -13,22 +17,22 @@ const routes = [
   {
     path: '/menu',
     name: 'Menu',
-    component: () => import('../views/Menu.vue')
+    component: Menu
   },
   {
     path: '/coffee',
     name: 'Coffee',
-    component: () => import('../views/Coffee.vue')
+    component: Coffee
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: () => import('../views/Profile.vue')
+    component: Profile
   },
   {
     path: '/status',
     name: 'Status',
-    component: () => import('../views/Status.vue')
+    component: Status
   }
 ]
 

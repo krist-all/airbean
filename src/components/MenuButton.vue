@@ -1,5 +1,12 @@
 <template>
   <div >
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/menu">Meny</router-link> |
+      <router-link to="/coffee">Vårt Kaffe</router-link> |
+      <router-link to="/profile">Profil</router-link> |
+      <router-link to="/status">Orderstatus</router-link> 
+    </div>
     
   </div>
 </template>
