@@ -1,39 +1,47 @@
 <template>
-  <div >
-    <div id="nav">
+  <div>
+    <div @click="showNav = !showNav">
+    <div class="nav-icon" v-if="showNav">
+      <Navicon />
+    </div>
+    <div class="nav" v-else-if="!showNav">
+      <Closeicon />
       <router-link to="/">Home</router-link> |
       <router-link to="/menu">Meny</router-link> |
       <router-link to="/coffee">Vårt Kaffe</router-link> |
       <router-link to="/profile">Profil</router-link> |
       <router-link to="/status">Orderstatus</router-link> 
     </div>
-    
+    </div>
   </div>
 </template>
 
 <script>
+import Navicon from '../assets/Navicon'
+import Closeicon from '../assets/Closeicon'
 export default {
   name: 'MenuButton',
-  props: {
-   
+  data(){
+    return{
+        showNav: true
+    }
+  },
+  components:{
+    Navicon,
+    Closeicon
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.nav-icon {
+  cursor: pointer;
+  
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.nav {
+  background-color: #2F2926;
+  color: white;
+ 
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

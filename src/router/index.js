@@ -6,6 +6,7 @@ import Coffee from '../views/Coffee.vue'
 import Profile from '../views/Profile.vue'
 import Status from '../views/Status.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,7 +34,9 @@ const routes = [
     path: '/status',
     name: 'Status',
     component: Status
-  }
+  },
+ 
+  
 ]
 
 const router = new VueRouter({

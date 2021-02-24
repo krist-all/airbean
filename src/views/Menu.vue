@@ -1,19 +1,25 @@
 <template>
-  <div class="menu">
-    <h1>Te</h1>
+  <div class="background">
+    <div class="menu-button">
+    <MenuButton />
+    </div>
   </div>
 </template>
 
 <script>
+import MenuButton from '../components/MenuButton'
 export default {
+  components:{
+    MenuButton
+  }
   
 }
 </script>
 
 <style scoped>
-.menu{
-  background-color:#2F8C91;
-  display: flex;
+.background{
+  background-color:#F3E4E1;
+  min-height: 839px;
   width: 20%;
 }
 

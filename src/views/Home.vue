@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-  
-    <MenuButton />
+  <div class="landing" @click="routeMenu">
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import MenuButton from '@/components/MenuButton.vue'
-
 export default {
   name: 'Home',
-  components: {
-    MenuButton
+  methods:{
+    routeMenu(){
+      this.$router.push('Menu')
+    }
   }
 }
 </script>
+
+<style scoped>
+.landing{
+  background-color:#2F8C91;
+  width: 20%;
+  min-height: 667px;
+}
+
+</style>
