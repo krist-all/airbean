@@ -6,12 +6,3 @@
 <rect x="11" y="32" width="26" height="2" rx="1" fill="#222222"/>
 </svg>
 </template>
-
-<style scoped>
-svg {
-    display: flex;
-    align-items: flex-start;
-    margin-top: -100px;
-    margin-left: 25px;
-}
-</style>
