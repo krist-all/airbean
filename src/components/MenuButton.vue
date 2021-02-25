@@ -60,11 +60,12 @@ export default {
   
 }
 .nav {
-  display: flex;
   background-color: #2F2926;
-  height: 100%;
-  width: 20%;
+  height: 667px;
+  min-width: 20%;
   position: fixed;
+  
+
 }
 h1{
   color: white;

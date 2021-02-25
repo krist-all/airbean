@@ -42,7 +42,7 @@ export default {
     display: flex;
     max-width: 80%;
     max-height: 8%;
-    contain: content;
+    
     position: relative;
 }
 h2{
@@ -54,9 +54,7 @@ h2{
     line-height: 120%;
     white-space: nowrap;
 }
-.price{
-   
-}
+
 .point-line{
     margin-left: -4rem;
 }

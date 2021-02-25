@@ -49,12 +49,10 @@ export default {
   background-color:#F3E4E1;
   min-height: 839px;
   width: 20%;
-  
   display: flex;
-  
+  position: relative;
 }
 .list-container{
-
   min-width: 90%;
   min-height: 75%;
   margin-left: 1rem;
@@ -64,8 +62,6 @@ export default {
 .footer{
   position: fixed;
   margin-top: 48rem;
-  
-
 }
 h1{
   position: fixed;
