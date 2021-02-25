@@ -3,14 +3,19 @@
     <div class="menu-button">
     <MenuButton />
     </div>
+    <div>
+      <StatusDrone />
+    </div>
   </div>
 </template>
 
 <script>
 import MenuButton from '@/components/MenuButton.vue'
+import StatusDrone from '@/assets/StatusDrone.vue'
 export default {
     components:{
-        MenuButton
+        MenuButton,
+        StatusDrone
     }
 }
 </script>

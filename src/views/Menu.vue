@@ -3,14 +3,19 @@
     <div class="menu-button">
     <MenuButton />
     </div>
+    <div>
+      <AddCoffee />
+    </div>
   </div>
 </template>
 
 <script>
 import MenuButton from '../components/MenuButton'
+import AddCoffee from '../components/AddCoffee'
 export default {
   components:{
-    MenuButton
+    MenuButton,
+    AddCoffee
   }
   
 }
