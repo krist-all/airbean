@@ -40,12 +40,13 @@ export default {
 <style scoped>
 .coffee-info{
     display: flex;
-    max-width: 311px;
-    max-height: 64px;
+    max-width: 80%;
+    max-height: 8%;
+    contain: content;
+    position: relative;
 }
 h2{
     display: inline-flex;
-
     font-family: PT Serif;
     font-style: normal;
     font-weight: bold;
@@ -54,10 +55,10 @@ h2{
     white-space: nowrap;
 }
 .price{
-   position: inline-end;
+   
 }
 .point-line{
-    
+    margin-left: -4rem;
 }
 p{
     white-space: nowrap;
@@ -66,6 +67,7 @@ p{
     font-weight: normal;
     font-size: 12px;
     line-height: 130%;
- 
+    margin-top: 3rem;
+    position: fixed;
 }
 </style>

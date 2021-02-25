@@ -45,6 +45,8 @@ export default {
 
 .nav-icon {
   cursor: pointer;
+  padding: 1rem;
+  
 }
 .close-icon{
   cursor: pointer;
@@ -55,11 +57,12 @@ export default {
   margin-top: 40%;
   padding: 1rem;
   justify-content: space-evenly;
+  
 }
 .nav {
   display: flex;
   background-color: #2F2926;
-  min-height: 667px;
+  height: 100%;
   width: 20%;
   position: fixed;
 }
