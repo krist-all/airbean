@@ -60,7 +60,6 @@ export default {
   display: flex;
   background-color: #2F2926;
   min-height: 667px;
-  
 }
 h1{
   color: white;
