@@ -1,48 +1,50 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import UUID, { uuid } from 'vue-uuid'
 
 Vue.use(Vuex)
+Vue.use(UUID)
 
 export default new Vuex.Store({
   state: {
     coffee: [
       {
-        id: "",
+        id: uuid.v4(),
         name: "Bryggkaffe",
         price: 49,
         description: "Bryggd på månadens bönor",
         bean: ""
       },
       {
-        id: "",
+        id: uuid.v4(),
         name: "Caffé Doppio",
         price: 49,
         description: "Bryggd på månadens bönor",
         bean: ""
       },
       {
-        id: "",
+        id: uuid.v4(),
         name: "Cappuccino",
         price: 49,
         description: "Bryggd på månadens bönor",
         bean: ""
       },
       {
-        id: "",
+        id: uuid.v4(),
         name: "Latte Macchiato",
         price: 49,
         description: "Bryggd på månadens bönor",
         bean: ""
       },
       {
-        id: "",
+        id: uuid.v4(),
         name: "Kaffe Latte",
         price: 49,
         description: "Bryggd på månadens bönor",
         bean: ""
       },
       {
-        id: "",
+        id: uuid.v4(),
         name: "Cortado",
         price: 39,
         description: "Bryggd på månadens bönor",
@@ -51,10 +53,23 @@ export default new Vuex.Store({
     ]
 
   },
+
+  getters:{
+    coffee: state =>{
+      return state.coffee;
+    },
+
+    getCoffeById: (state) => (id) => {
+      return state.coffee.find(cof => cof.id == id)
+    },
+    
+  },
   mutations: {
+
   },
   actions: {
+
   },
-  modules: {
+  modules:{
+
   }
-})

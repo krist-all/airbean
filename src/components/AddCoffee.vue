@@ -4,7 +4,7 @@
           <AddPlus />
       </div>
       <div>
-          
+
       </div>
   </div>
 </template>
@@ -14,7 +14,8 @@ import AddPlus from '../assets/AddPlus'
 export default {
     components:{
         AddPlus
-    }
+    },
+    
 
 }
 </script>

@@ -3,7 +3,7 @@
     <div class="menu-button">
     <MenuButton />
     </div>
-    <div>
+    <div v-for="cof in coffee" :key="cof.id">
       <AddCoffee />
     </div>
   </div>
@@ -16,7 +16,12 @@ export default {
   components:{
     MenuButton,
     AddCoffee
-  }
+  },
+  computed:{
+        coffee(){
+            return this.$store.state.coffee;
+        }
+    }
   
 }
 </script>
