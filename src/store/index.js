@@ -58,11 +58,21 @@ export default new Vuex.Store({
     coffee: state =>{
       return state.coffee;
     },
-
     getCoffeById: (state) => (id) => {
-      return state.coffee.find(cof => cof.id == id)
+      return state.coffee.find(cof => cof.id == id);
     },
-    
+    getCoffeeByBean: state => (bean) => {
+      return state.coffee.filter(cof => cof.bean == bean);
+    },
+    getCoffeeByName: (state) => (name) => {
+      return state.coffee.find(cof => cof.name == name);
+    },
+    coffeeCount: (state, getters) =>{
+      return getters.getCoffeeByName.lenght;
+    },
+    getCoffeeCountByName: (state, getters) => (name) => {
+      return getters.getCoffeeByName(name).lenght;
+    }
   },
   mutations: {
 
@@ -73,3 +83,4 @@ export default new Vuex.Store({
   modules:{
 
   }
+})
