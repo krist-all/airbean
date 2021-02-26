@@ -3,13 +3,13 @@
     <div>
       <Header/>
     </div>
-    <div class="menu-button">
+    <div class="menu-button" @click="active = !active" >
     <MenuButton />
     </div>
-    <h1>
+    <h1 :class="{ menuh1: active == true, menuh1disabled: active == false }">
           Meny
     </h1>
-    <div class="list-container">
+    <div :class="{ listcontainer: active == true, listcontainerdisabled: active == false}">
     <div v-for="cof in coffee" :key="cof.id">
       <AddCoffee
       :cofName="cof.name"
@@ -30,6 +30,11 @@ import AddCoffee from '../components/AddCoffee'
 import Header from '../assets/Header'
 import Footer from '../assets/Footer'
 export default {
+  data(){
+    return{
+      active: true
+    }
+  },
   components:{
     MenuButton,
     AddCoffee,
@@ -52,18 +57,21 @@ export default {
   display: flex;
   position: relative;
 }
-.list-container{
+.listcontainer{
   min-width: 90%;
   min-height: 75%;
   margin-left: 1rem;
   margin-top: 15rem;
   position: fixed;
 }
+.listcontainerdisabled{
+  display: none;
+}
 .footer{
   position: fixed;
   margin-top: 48rem;
 }
-h1{
+.menuh1{
   position: fixed;
   margin-top: 11rem;
   margin-left: 9rem;
@@ -72,7 +80,9 @@ h1{
   font-weight: bold;
   font-size: 42px;
   line-height: 120%;
-  
+}
+.menuh1disabled{
+  display: none;
 }
 .menu-button{
   position: fixed;

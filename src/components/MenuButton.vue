@@ -37,7 +37,8 @@ export default {
     Navicon,
     Closeicon,
     MenuLine
-  }
+  },
+ 
 }
 </script>
 
@@ -64,8 +65,6 @@ export default {
   height: 667px;
   min-width: 20%;
   position: fixed;
-  
-
 }
 h1{
   color: white;
