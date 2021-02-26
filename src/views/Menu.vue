@@ -6,11 +6,8 @@
     <div class="menu-button" @click="active = !active" >
     <MenuButton />
     </div>
-    <div>
-      <CartIcon />
-      <div>
-      <CartItemcount/>
-      </div>
+    <div :class="{ cartbtn: active == true, cartbtndisabled: active == false }">
+      <CartButton/>
     </div>
     <h1 :class="{ menuh1: active == true, menuh1disabled: active == false }">
           Meny
@@ -35,8 +32,7 @@ import MenuButton from '../components/MenuButton'
 import AddCoffee from '../components/AddCoffee'
 import Header from '../assets/Header'
 import Footer from '../assets/Footer'
-import CartIcon from '../assets/CartIcon'
-import CartItemcount from '../assets/CartItemcount'
+import CartButton from '../components/CartButton'
 export default {
   data(){
     return{
@@ -48,8 +44,7 @@ export default {
     AddCoffee,
     Header,
     Footer,
-    CartIcon,
-    CartItemcount
+    CartButton
   },
   computed:{
         coffee(){
@@ -100,6 +95,13 @@ export default {
 }
 .menu-button{
   position: fixed;
-  
 }
+.cartbtn{
+  position: fixed;
+  margin-left: 18rem;
+}
+.cartbtndisabled{
+  display: none;
+}
+
 </style>
