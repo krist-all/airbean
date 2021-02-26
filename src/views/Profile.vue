@@ -3,14 +3,17 @@
     <div class="menu-button">
     <MenuButton />
     </div>
+    <RegisterUser/>
   </div>
 </template>
 
 <script>
 import MenuButton from '@/components/MenuButton.vue'
+import RegisterUser from '@/components/RegisterUser.vue'
 export default {
     components:{
-        MenuButton
+        MenuButton,
+        RegisterUser
     }
 }
 </script>

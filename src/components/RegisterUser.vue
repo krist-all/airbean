@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <div class="userbkg">
     <AirbeanSmallLogo/>
     <h1>Välkommen till AirBean-familjen!</h1>
@@ -15,6 +16,7 @@
     </div>
     <button>Brew me a cup!</button>
   </div>
+  </div>
 </template>
 
 <script>
@@ -29,16 +31,34 @@ export default {
 </script>
 
 <style scoped>
-
-.userbkg {
-  background-color: #F3E4E1;
-  width: 18%;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: contain;
   min-height: 566px;
-  position: fixed;
-  border-radius: 3px;
 }
 
+.userbkg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F3E4E1;
+  width: 90%;
+  border-radius: 3px;
+  margin-top: 5rem;
+}
+
+h1 {
+  font-family: PT Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 120%;
+}
 .inputtext {
+  align-self: center;  
   border: 1px solid #2F2926;
   box-sizing: border-box;
   border-radius: 6px;
