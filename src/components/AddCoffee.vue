@@ -41,8 +41,7 @@ export default {
 .coffee-info{
     display: flex;
     max-width: 80%;
-    max-height: 8%;
-    
+    max-height: 8%; 
     position: relative;
 }
 h2{
