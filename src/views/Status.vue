@@ -29,6 +29,11 @@ export default {
   background-color: #e5674e;
   width: 20%;
   min-height: 667px;
+  contain: content;
+  position: relative;
+}
+.menu-button{
+  position: fixed;
 }
 
 h1,

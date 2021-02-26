@@ -66,6 +66,7 @@ p{
     font-size: 12px;
     line-height: 130%;
     margin-top: 3rem;
+    margin-left: 4rem;
     position: fixed;
 }
 </style>

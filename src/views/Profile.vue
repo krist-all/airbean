@@ -20,6 +20,11 @@ export default {
   background-color:#2F2926;
   width: 20%;
   min-height: 667px;
+  contain: content;
+  position: relative;
+}
+.menu-button{
+  position: fixed;
 }
 
 </style>

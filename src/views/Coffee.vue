@@ -35,8 +35,12 @@ export default {
   background-color:#F3E4E1;
   width: 20%;
   min-height: 1061px;
+  contain: content;
+  position: relative;
 }
-
+.menu-button{
+  position: fixed;
+}
 
 p, h1 {
   text-align: left;

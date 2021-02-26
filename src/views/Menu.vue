@@ -18,7 +18,7 @@
       />
     </div>
     </div>
-    <div class="footer">
+    <div :class="{ footer: active == true, footerdisabled: active == false}">
       <Footer/>
     </div>
   </div>
@@ -56,6 +56,7 @@ export default {
   width: 20%;
   display: flex;
   position: relative;
+  contain: content;
 }
 .listcontainer{
   min-width: 90%;
@@ -70,6 +71,9 @@ export default {
 .footer{
   position: fixed;
   margin-top: 48rem;
+}
+.footerdisabled{
+  display: none;
 }
 .menuh1{
   position: fixed;

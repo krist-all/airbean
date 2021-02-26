@@ -62,8 +62,8 @@ export default {
 }
 .nav {
   background-color: #2F2926;
-  height: 667px;
-  min-width: 20%;
+  height: 100%;
+  min-width: 100%;
   position: fixed;
 }
 h1{
