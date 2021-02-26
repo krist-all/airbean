@@ -50,7 +50,15 @@ export default new Vuex.Store({
         description: "Bryggd på månadens bönor",
         bean: ""
       }  
-    ]
+    ],
+    
+    user: null,
+      // {
+      //   id: null,
+      //   name: "",
+      //   epost: "",
+      //   gdpr: false,
+      // }
 
   },
 
@@ -75,6 +83,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    setUser(state, payload) {
+      state.user = payload;
+    }
 
   },
   actions: {
