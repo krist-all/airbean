@@ -1,7 +1,7 @@
 <template>
   <div> 
       <div class="coffee-info">
-          <div @click="addToCart">
+          <div >
           <AddPlus />
           </div>
           <h2>
@@ -33,17 +33,6 @@ export default {
         AddPlus,
         PointLine
     },
-    computed:{
-        getCoffeeById(){
-            return this.$store.getters.getCoffeeById
-        }
-    },
-     methods:{
-         addToCart(getCoffeeById){
-             this.$store.dispatch('addCofToCart', getCoffeeById)
-         }
-     }
-
 }
 </script>
 

@@ -13,7 +13,7 @@
           Meny
     </h1>
     <div :class="{ listcontainer: active == true, listcontainerdisabled: active == false}">
-    <div v-for="cof in coffee" :key="cof.id">
+    <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
       <AddCoffee
       :cofName="cof.name"
       :cofPrice="cof.price"
@@ -36,7 +36,7 @@ import CartButton from '../components/CartButton'
 export default {
   data(){
     return{
-      active: true
+      active: true,
     }
   },
   components:{
@@ -49,8 +49,13 @@ export default {
   computed:{
         coffee(){
             return this.$store.getters.coffee;
-        }
-    }
+        },
+    },
+  methods:{
+        addToCart(cof){    
+            this.$store.commit('pushToCart', cof)
+         }
+     }
 }
 </script>
 

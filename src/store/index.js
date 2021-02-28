@@ -2,8 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import UUID, { uuid } from 'vue-uuid'
 
+
 Vue.use(Vuex)
 Vue.use(UUID)
+
 
 export default new Vuex.Store({
   state: {
@@ -54,6 +56,7 @@ export default new Vuex.Store({
     cart: [
 
     ],
+    cartCount: 0,
     
     user: null,
       // {
@@ -69,51 +72,35 @@ export default new Vuex.Store({
     coffee: state =>{
       return state.coffee;
     },
-    getCoffeById: (state) => (id) => {
-      return state.coffee.find(cof => cof.id == id);
+    cart: state => {
+      return state.cart;
     },
     getCoffeeByBean: state => (bean) => {
       return state.coffee.filter(cof => cof.bean == bean);
-    },
-    getCoffeeByName: (state) => (name) => {
-      return state.coffee.find(cof => cof.name == name);
-    },
-    coffeeCount: (state, getters) =>{
-      return getters.getCoffeeByName.lenght;
-    },
-    getCoffeeCountByName: (state, getters) => (name) => {
-      return getters.getCoffeeByName(name).lenght;
     }
   },
   mutations: {
     setUser(state, payload) {
       state.user = payload;
     },
-    pushCofToCart(state, cofId){
-      state.cart.push({
-        id: cofId,
-        quantity: 1
+    pushToCart(state, cof){
+      let foundCoffee = state.cart.find(item => item.id == cof.id )
+      
+      if(foundCoffee){
+        foundCoffee.quantity++;
+        foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;
+      } else {
+        state.cart.push(cof)
 
-      })
-    },
-    incrementItemQuantity(state, cartItem){
-      cartItem.quantity++
+        Vue.set(cof, 'quantity', 1);
+        Vue.set(cof, 'totalPrice', cof.price)
+      }
+      state.cartCount++;
     }
 
   },
   actions: {
-    addCofToCart(context, cof) {
-      const cartItem = context.state.cart.find(item => item.id === cof.id)
-      if(!cartItem){
-        context.commit('pushCofToCart', cof.id)
-//find cartItem
-      } else {
-        context.commit('incrementItemQuantity', cartItem)
-//incrementItemQuantity
-      }
-
-    }
-
+  
   },
   modules:{
 

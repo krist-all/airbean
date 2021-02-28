@@ -1,5 +1,6 @@
 <template>
-  <div class="cart">
+  <div  >
+    <div class="cart" @click="showCart = true">
       <div>
       <CartIcon/>
       </div>
@@ -7,19 +8,37 @@
         <CartBag/>
       </div>  
       <v-badge class="item-count">
-       5
+       {{$store.state.cartCount}}
       </v-badge>
+    </div>   
+
+    <modal v-if="showCart" @close="showCart = false" >
+  
+      <div >
+        <OpenCart/>
+      </div>  
+  
+    </modal>
+
   </div>
 </template>
 
 <script>
 import CartIcon from '../assets/CartIcon'
 import CartBag from '../assets/CartBag'
+
+import OpenCart from './OpenCart'
 export default {
     components:{
         CartIcon,
-        CartBag
-    }
+        CartBag,
+        OpenCart
+    },
+    data() {
+      return {
+        showCart: false
+      }
+    },
 }
 </script>
 
@@ -29,11 +48,7 @@ export default {
   contain: content;
   align-items: center;
   justify-content: center;
-  max-width: 60px;
-  max-height: 60px;
-  padding: 1rem;
 }
-
 .item-count{
  position: fixed;
  margin-bottom: 3rem;
@@ -58,4 +73,16 @@ export default {
 .cart-bag{
   position: fixed;
 }
+.modal-enter{
+  opacity: 0;
+}
+.modal-leave-active{
+  opacity: 0;
+}
+.modal-enter .modal-container,
+.modal-leave-active .modal-container{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 </style>
