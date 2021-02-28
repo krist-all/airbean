@@ -12,12 +12,10 @@
       </v-badge>
     </div>   
 
-    <modal v-if="showCart" @close="showCart = false" >
-  
+    <modal name="modal" v-if="showCart" @close="showCart = false" >
       <div >
         <OpenCart/>
-      </div>  
-  
+      </div>
     </modal>
 
   </div>
@@ -26,13 +24,12 @@
 <script>
 import CartIcon from '../assets/CartIcon'
 import CartBag from '../assets/CartBag'
-
-import OpenCart from './OpenCart'
+import Modal from './Modal'
 export default {
     components:{
         CartIcon,
         CartBag,
-        OpenCart
+        Modal
     },
     data() {
       return {

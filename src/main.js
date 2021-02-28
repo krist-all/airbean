@@ -2,14 +2,17 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import vmodal from 'vue-js-modal'
+import VModal from 'vue-js-modal'
+import Vueify from 'vueify'
 
 Vue.config.productionTip = false
-Vue.use(vmodal)
+Vue.use(VModal)
+Vue.use(Vueify)
 
 new Vue({
   router,
   store,
-  vmodal,
+  VModal,
+  Vueify,
   render: h => h(App)
 }).$mount('#app')
