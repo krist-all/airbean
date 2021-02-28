@@ -58,6 +58,7 @@ export default {
   margin-top: 40%;
   padding: 1rem;
   justify-content: space-evenly;
+  color: red;
   
 }
 .nav {

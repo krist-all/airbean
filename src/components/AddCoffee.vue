@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div class="wrapper"> 
       <div class="coffee-info">
           <div >
           <AddPlus />
@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style scoped>
+
 .coffee-info{
     display: flex;
     max-width: 80%;
@@ -57,7 +58,7 @@ h2{
     margin-left: -4rem;
 }
 p{
-    white-space: nowrap;
+    /* white-space: nowrap; */
     font-family: Work Sans;
     font-style: normal;
     font-weight: normal;
@@ -67,4 +68,5 @@ p{
     margin-left: 4rem;
     position: fixed;
 }
+
 </style>

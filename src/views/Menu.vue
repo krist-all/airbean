@@ -68,8 +68,8 @@ export default {
 <style scoped>
 .background{
   background-color:#F3E4E1;
-  min-height: 839px;
-  width: 20%;
+  min-height: 667px;
+  width: 23rem;
   display: flex;
   position: relative;
   contain: content;
