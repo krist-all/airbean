@@ -5,7 +5,7 @@ import Menu from '../views/Menu.vue'
 import Coffee from '../views/Coffee.vue'
 import Profile from '../views/Profile.vue'
 import Status from '../views/Status.vue'
-
+import modal2 from '@/views/modal2.vue'
 
 Vue.use(VueRouter)
 
@@ -13,8 +13,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [{
+      path:':modal'
+    }]
   },
+
   {
     path: '/menu',
     name: 'Menu',
