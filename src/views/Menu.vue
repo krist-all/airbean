@@ -1,18 +1,22 @@
 <template>
-  <div class="background">
+  <div :class="{background: cartActive == true, backgroundsmaller: cartActive == false}">
     <div>
       <Header/>
     </div>
     <div class="menu-button" @click="active = !active" >
     <MenuButton />
     </div>
-    <div :class="{ cartbtn: active == true, cartbtndisabled: active == false }">
-      <CartButton/>
+    <div @click="cartActive = false" @click.right="cartActive = true"
+    :class="{ cartbtn: active == true, cartbtndisabled: active == false }">
+      <CartButton
+      />
     </div>
-    <h1 :class="{ menuh1: active == true, menuh1disabled: active == false }">
+    <h1 :class="{ menuh1: active == true, menuh1disabled: active == false,
+     menuh1: cartActive == true, menuh1disabled: cartActive == false  }">
           Meny
     </h1>
-    <div :class="{ listcontainer: active == true, listcontainerdisabled: active == false}">
+    <div :class="{ listcontainer: active == true, listcontainerdisabled: active == false, 
+    listcontainer: cartActive == true, listcontainerdisabled: cartActive == false}">
     <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
       <AddCoffee
       :cofName="cof.name"
@@ -21,7 +25,8 @@
       />
     </div>
     </div>
-    <div :class="{ footer: active == true, footerdisabled: active == false}">
+    <div :class="{ footer: active == true, footerdisabled: active == false,
+    footer: cartActive == true, footerdisabled: cartActive == false}">
       <Footer/>
     </div>
   </div>
@@ -37,6 +42,7 @@ export default {
   data(){
     return{
       active: true,
+      cartActive: true
     }
   },
   components:{
@@ -68,12 +74,21 @@ export default {
   position: relative;
   contain: content;
 }
+.backgroundsmaller{
+  background-color:#F3E4E1;
+  min-height: 677px;
+  width: 20%;
+  display: flex;
+  position: relative;
+  contain: content;
+}
 .listcontainer{
   min-width: 90%;
   min-height: 75%;
   margin-left: 1rem;
   margin-top: 15rem;
   position: fixed;
+
 }
 .listcontainerdisabled{
   display: none;
