@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper"> 
       <div class="coffee-info">
-          <div >
+          <div class="add-plus">
           <AddPlus />
           </div>
           <h2>
@@ -67,6 +67,9 @@ p{
     margin-top: 3rem;
     margin-left: 4rem;
     position: fixed;
+}
+.add-plus{
+    cursor: pointer;
 }
 
 </style>

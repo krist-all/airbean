@@ -37,7 +37,7 @@ body{
 }
 .landing{
   background-color:#2F8C91;
-  width: 25rem;
+  width: 23rem;
   min-height: 667px;
   display: flex;
   position: relative;

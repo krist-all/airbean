@@ -3,20 +3,10 @@
     <div>
       <Header/>
     </div>
-    <div class="menu-button" @click="active = !active" >
-    <MenuButton />
-    </div>
-    <div @click="cartActive = false" @click.right="cartActive = true"
-    :class="{ cartbtn: active == true, cartbtndisabled: active == false }">
-      <CartButton
-      />
-    </div>
-    <h1 :class="{ menuh1: active == true, menuh1disabled: active == false,
-     menuh1: cartActive == true, menuh1disabled: cartActive == false  }">
+    <h1 class="menuh1">
           Meny
     </h1>
-    <div :class="{ listcontainer: active == true, listcontainerdisabled: active == false, 
-    listcontainer: cartActive == true, listcontainerdisabled: cartActive == false}">
+    <div class=" listcontainer">
     <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
       <AddCoffee
       :cofName="cof.name"
@@ -25,9 +15,14 @@
       />
     </div>
     </div>
-    <div :class="{ footer: active == true, footerdisabled: active == false,
-    footer: cartActive == true, footerdisabled: cartActive == false}">
+    <div class="footer">
       <Footer/>
+    </div>
+     <div @click="cartActive = false" @click.right="cartActive = true" class="cartbtn">
+      <CartButton/>
+    </div>
+    <div class="menu-button" @click="active = !active" >
+    <MenuButton />
     </div>
   </div>
 </template>
@@ -41,7 +36,7 @@ import CartButton from '../components/CartButton'
 export default {
   data(){
     return{
-      active: true,
+      active: false,
       cartActive: true
     }
   },
@@ -77,7 +72,7 @@ export default {
 .backgroundsmaller{
   background-color:#F3E4E1;
   min-height: 677px;
-  width: 20%;
+  width: 23rem;
   display: flex;
   position: relative;
   contain: content;
@@ -90,15 +85,9 @@ export default {
   position: fixed;
 
 }
-.listcontainerdisabled{
-  display: none;
-}
 .footer{
   position: fixed;
   margin-top: 48rem;
-}
-.footerdisabled{
-  display: none;
 }
 .menuh1{
   position: fixed;
@@ -110,18 +99,11 @@ export default {
   font-size: 42px;
   line-height: 120%;
 }
-.menuh1disabled{
-  display: none;
-}
 .menu-button{
   position: fixed;
 }
 .cartbtn{
   position: fixed;
-  margin-left: 18rem;
+  margin-left: 17rem;
 }
-.cartbtndisabled{
-  display: none;
-}
-
 </style>

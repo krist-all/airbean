@@ -12,9 +12,7 @@
       </div>
     </div>
     <modal name="modal" v-if="showCart" @close="showCart = false" >
-      <div>
-        <CartItems/>
-      </div>
+      
     </modal>
   </div>
 </template>
@@ -22,14 +20,14 @@
 <script>
 import CartIcon from '../assets/CartIcon'
 import CartBag from '../assets/CartBag'
-import CartItems from './CartItems'
+
 import Modal from './Modal.vue'
 export default {
     components:{
         CartIcon,
         CartBag,
         Modal,
-        CartItems,
+        
         
     },
     data() {
@@ -46,6 +44,7 @@ export default {
   contain: content;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .item-count{
  position: fixed;

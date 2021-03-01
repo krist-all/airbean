@@ -22,7 +22,7 @@ export default {
 <style scoped>
 .background{
   background-color:#2F2926;
-  width: 20%;
+  width: 23rem;
   min-height: 667px;
   contain: content;
   position: relative;
