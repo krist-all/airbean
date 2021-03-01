@@ -14,9 +14,9 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    children: [{
-      path:':modal'
-    }]
+    // children: [{
+    //   path:':modal'
+    // }]
   },
 
   {
@@ -40,17 +40,10 @@ const routes = [
     component: Status
   },
   {
-<<<<<<< Updated upstream
     path: '/modal2',
-    name: 'modal2',
-    component: modal2
-  }
-=======
-    path: '/modal',
-    name: 'Modal',
+    name: 'Modal2',
     component: Modal2
   },
->>>>>>> Stashed changes
 ]
 
 const router = new VueRouter({

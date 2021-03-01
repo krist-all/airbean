@@ -66,6 +66,7 @@ export default {
   height: 100%;
   min-width: 100%;
   position: fixed;
+  z-index: 997;
 }
 h1{
   color: white;
