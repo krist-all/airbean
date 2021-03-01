@@ -5,7 +5,7 @@ import Menu from '../views/Menu.vue'
 import Coffee from '../views/Coffee.vue'
 import Profile from '../views/Profile.vue'
 import Status from '../views/Status.vue'
-import modal2 from '@/views/modal2.vue'
+import Modal2 from '../views/Modal2.vue'
 
 Vue.use(VueRouter)
 
@@ -40,10 +40,17 @@ const routes = [
     component: Status
   },
   {
+<<<<<<< Updated upstream
     path: '/modal2',
     name: 'modal2',
     component: modal2
   }
+=======
+    path: '/modal',
+    name: 'Modal',
+    component: Modal2
+  },
+>>>>>>> Stashed changes
 ]
 
 const router = new VueRouter({
