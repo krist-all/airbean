@@ -39,6 +39,11 @@ const routes = [
     name: 'Status',
     component: Status
   },
+  {
+    path: '/modal2',
+    name: 'modal2',
+    component: modal2
+  }
 ]
 
 const router = new VueRouter({
