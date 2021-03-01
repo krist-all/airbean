@@ -59,7 +59,7 @@ export default {
   transition: all 0.3s ease;
   width: 90%;
   height: 85%;
-  margin-top: 3rem;
+  margin-top: 1rem;
 
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   border-radius: 3px;

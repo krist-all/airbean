@@ -38,7 +38,6 @@ export default {
     Closeicon,
     MenuLine
   },
- 
 }
 </script>
 
@@ -58,7 +57,7 @@ export default {
   margin-top: 40%;
   padding: 1rem;
   justify-content: space-evenly;
-  color: red;
+  
   
 }
 .nav {
@@ -69,6 +68,11 @@ export default {
 }
 h1{
   color: white;
+  font-family: PT Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 120%;
 }
 a {
   text-decoration: none;

@@ -1,5 +1,5 @@
 <template>
-  <div :class="{background: cartActive == true, backgroundsmaller: cartActive == false}">
+  <div class="background">
     <div>
       <Header/>
     </div>
@@ -18,7 +18,7 @@
     <div class="footer">
       <Footer/>
     </div>
-     <div @click="cartActive = false" @click.right="cartActive = true" class="cartbtn">
+     <div class="cartbtn">
       <CartButton/>
     </div>
     <div class="menu-button" @click="active = !active" >
@@ -36,8 +36,7 @@ import CartButton from '../components/CartButton'
 export default {
   data(){
     return{
-      active: false,
-      cartActive: true
+      active: false
     }
   },
   components:{
@@ -69,14 +68,6 @@ export default {
   position: relative;
   contain: content;
 }
-.backgroundsmaller{
-  background-color:#F3E4E1;
-  min-height: 677px;
-  width: 23rem;
-  display: flex;
-  position: relative;
-  contain: content;
-}
 .listcontainer{
   min-width: 90%;
   min-height: 75%;
@@ -101,9 +92,5 @@ export default {
 }
 .menu-button{
   position: fixed;
-}
-.cartbtn{
-  position: fixed;
-  margin-left: 17rem;
 }
 </style>
