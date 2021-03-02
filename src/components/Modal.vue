@@ -11,9 +11,8 @@
             <div class="cart-items">
             <div v-for="items in cart" :key="items.id" >
               <CartItems
-               :name="items.name"
-               :quantity="items.quantity"
-               :itemTotal="items.totalPrice"
+              :items="items"
+              
               />
             </div>
               <div class="cart-total">

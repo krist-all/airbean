@@ -3,17 +3,17 @@
     <div class="cart-item">
     <h2>
     <div class="name">
-      {{name}}
+      {{items.name}}
     </div>
     <div class="point-line">
         <PointLine/>
     </div>
     <div class="quantity">
-      <div @click="addToCart(cof)">
+      <div @click="$emit()">
         <QuantUp/>
       </div>
     <div>
-      {{quantity}}
+      {{items.quantity}}
     </div>
       <div>
         <QuantDown/>
@@ -21,7 +21,7 @@
     </div>
     </h2>
     <div class="item-total">
-        {{itemTotal}} kr
+        {{items.totalPrice}} kr
     </div> 
     </div>
   </div>
@@ -33,9 +33,7 @@ import QuantUp from '../assets/QuantUp'
 import QuantDown from '../assets/QuantDown'
 export default {
   props:{
-    name: String,
-    quantity: Number,
-    itemTotal: Number
+    items: Object
   },
   components:{
     PointLine,

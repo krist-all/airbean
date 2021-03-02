@@ -1,20 +1,20 @@
 <template>
   <div> 
       <div class="coffee-info">
-          <div class="add-plus" @click="addCoffeeToCart">
+          <div class="add-plus" @click="$emit('addToCart', cof)">
           <AddPlus />
           </div>
           <h2>
-              {{cofName}}
+              {{cof.name}}
           <div class="point-line">
               <PointLine/>
           </div>
           <div class="price">
-               {{cofPrice}} kr
+               {{cof.price}} kr
           </div>
           </h2>
           <p>
-              {{cofDescription}}
+              {{cof.description}}
           </p>
       </div>
   </div>
@@ -25,26 +25,12 @@ import AddPlus from '../assets/AddPlus'
 import PointLine from '../assets/PointLine'
 export default {
     props:{
-        cofName: String,
-        cofPrice: Number,
-        cofDescription: String,
-        cofId: String
+        cof: Object
     },
     components:{
         AddPlus,
         PointLine
-    },
-    computed:{
-        coffee(){
-             return this.$store.getters.getCoffeeById;
-         },
-    },
-    methods:{
-        addCoffeeToCart(evt){
-            this.$emit( 'addCoffeeToCart', evt.target.coffee )
-        }
     }
-    
   
 }
 </script>

@@ -7,12 +7,11 @@
           Meny
     </h1>
     <div class=" listcontainer">
-    <div v-for="cof in coffee" :key="cof.id" @addCoffeeToCart="addToCart(cof)">
+    <div v-for="cof in coffee" :key="cof.id">
       <AddCoffee
-      :cofName="cof.name"
-      :cofPrice="cof.price"
-      :cofDescription="cof.description"
-      :cofId="cof.id"
+      @addToCart="addToCart"
+      :cof="cof"
+      
       />
     </div>
     </div>
@@ -51,10 +50,12 @@ export default {
          coffee(){
              return this.$store.getters.coffee;
          },
+         cart(){
+           return this.$store.getters.cart
+         }
      },
    methods:{
          addToCart(cof){
-            
              this.$store.commit('pushToCart', cof )
           }
       }
