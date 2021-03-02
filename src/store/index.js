@@ -103,7 +103,11 @@ export default new Vuex.Store({
 
   },
   actions: {
-  
+  setUser(context, user) {
+    context.commit("setUser", user)
+    localStorage.setItem("User", JSON.stringify(user));
+  }
+
   },
   modules:{
 

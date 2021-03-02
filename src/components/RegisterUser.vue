@@ -46,7 +46,7 @@ methods: {
         epost: this.emailinput,
         gdpr: this.radio,
       }
-    this.$store.commit("setUser", user)
+    this.$store.dispatch("setUser", user)
     
   }
 }
