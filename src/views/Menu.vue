@@ -6,19 +6,9 @@
     <h1 class="menuh1">
           Meny
     </h1>
-<<<<<<< Updated upstream
-    <div class=" listcontainer">
-    <div v-for="cof in coffee" :key="cof.id">
-      <AddCoffee
-      @addToCart="addToCart"
-      :cof="cof"
-      
-      />
-=======
     <div class="listcontainer">
     <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
-        <AddCoffee :cofData="cof"/>
->>>>>>> Stashed changes
+        <AddCoffee :cof="cof"/>
     </div>
     </div>
     <div class="footer">

@@ -32,15 +32,14 @@ export default {
 </script>
 
 <style scoped>
-body{
-  cursor: pointer;
-}
+
 .landing{
   background-color:#2F8C91;
   width: 23rem;
   min-height: 667px;
   display: flex;
   position: relative;
+  cursor: pointer;
 }
 .left-header{
 position: fixed;
