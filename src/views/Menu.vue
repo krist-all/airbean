@@ -8,11 +8,9 @@
     </h1>
     <div class=" listcontainer">
     <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
-      <AddCoffee
-      :cofName="cof.name"
-      :cofPrice="cof.price"
-      :cofDescription="cof.description"
-      />
+        <AddCoffee
+          :cofData="cof"
+        />
     </div>
     </div>
     <div class="footer">
@@ -34,17 +32,19 @@ import Header from '../assets/Header'
 import Footer from '../assets/Footer'
 import CartButton from '../components/CartButton'
 export default {
-  data(){
-    return{
-      active: false
-    }
-  },
+    data(){
+      return{
+        active: false,
+        cofData: {},
+        title: '',
+      }
+    },
   components:{
     MenuButton,
     AddCoffee,
     Header,
     Footer,
-    CartButton
+    CartButton,
   },
   computed:{
         coffee(){
@@ -54,7 +54,7 @@ export default {
   methods:{
         addToCart(cof){    
             this.$store.commit('pushToCart', cof)
-         }
+         },
      }
 }
 </script>
