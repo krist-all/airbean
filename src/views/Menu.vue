@@ -7,11 +7,12 @@
           Meny
     </h1>
     <div class=" listcontainer">
-    <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
+    <div v-for="cof in coffee" :key="cof.id" @addCoffeeToCart="addToCart(cof)">
       <AddCoffee
       :cofName="cof.name"
       :cofPrice="cof.price"
       :cofDescription="cof.description"
+      :cofId="cof.id"
       />
     </div>
     </div>
@@ -46,23 +47,24 @@ export default {
     Footer,
     CartButton
   },
-  computed:{
-        coffee(){
-            return this.$store.getters.coffee;
-        },
-    },
-  methods:{
-        addToCart(cof){    
-            this.$store.commit('pushToCart', cof)
-         }
-     }
+   computed:{
+         coffee(){
+             return this.$store.getters.coffee;
+         },
+     },
+   methods:{
+         addToCart(cof){
+            
+             this.$store.commit('pushToCart', cof )
+          }
+      }
 }
 </script>
 
 <style scoped>
 .background{
   background-color:#F3E4E1;
-  min-height: 839px;
+  min-height: 1000px;
   width: 23rem;
   display: flex;
   position: relative;
@@ -78,7 +80,7 @@ export default {
 }
 .footer{
   position: fixed;
-  margin-top: 48rem;
+  margin-top: 58rem;
 }
 .menuh1{
   position: fixed;

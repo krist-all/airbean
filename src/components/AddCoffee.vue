@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper"> 
+  <div> 
       <div class="coffee-info">
-          <div class="add-plus">
+          <div class="add-plus" @click="addCoffeeToCart">
           <AddPlus />
           </div>
           <h2>
@@ -27,12 +27,25 @@ export default {
     props:{
         cofName: String,
         cofPrice: Number,
-        cofDescription: String
+        cofDescription: String,
+        cofId: String
     },
     components:{
         AddPlus,
         PointLine
     },
+    computed:{
+        coffee(){
+             return this.$store.getters.getCoffeeById;
+         },
+    },
+    methods:{
+        addCoffeeToCart(evt){
+            this.$emit( 'addCoffeeToCart', evt.target.coffee )
+        }
+    }
+    
+  
 }
 </script>
 
@@ -58,7 +71,6 @@ h2{
     margin-left: -4rem;
 }
 p{
-    /* white-space: nowrap; */
     font-family: Work Sans;
     font-style: normal;
     font-weight: normal;

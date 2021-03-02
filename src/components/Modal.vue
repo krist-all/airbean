@@ -8,12 +8,30 @@
             <h1 class="header">
               Din Beställning
             </h1>
-            <div v-for="(items, index) in cart" :key="index" class="cart-items">
+            <div class="cart-items">
+            <div v-for="items in cart" :key="items.id" >
               <CartItems
                :name="items.name"
                :quantity="items.quantity"
                :itemTotal="items.totalPrice"
               />
+            </div>
+              <div class="cart-total">
+                <h2>
+                <div class="total-header">
+                      Total
+                </div>
+                <div class="point-line">
+                  <PointLine/>
+                </div>
+                <div class="total-sum">
+                {{totalPrice}} kr
+                </div>
+                </h2>
+                <p>
+                  inkl moms + drönarleverans
+                </p>
+              </div>
             </div>
           </div>
       </div>
@@ -23,17 +41,26 @@
 <script>
 import ArrowUp from '../assets/ArrowUp'
 import CartItems from './CartItems'
+import PointLine from '../assets/PointLine'
 export default {
     components:{
         CartItems,
-        ArrowUp
+        ArrowUp,
+        PointLine
     },
     computed:{
       cart(){
         return this.$store.getters.cart
+      },
+      totalPrice(){
+        let total = 0;
+
+        for(let items of this.cart){
+          total += items.totalPrice;
+        }
+        return total
       }
     }
-
 }
 </script>
 
@@ -43,8 +70,8 @@ export default {
   top: 0;
   left: 0;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -57,8 +84,8 @@ export default {
   display: flex;
   content: contain;
   transition: all 0.3s ease;
-  width: 90%;
-  height: 85%;
+  min-width: 90%;
+  min-height: 87%;
   margin-top: 1rem;
 
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
@@ -69,7 +96,7 @@ export default {
   display: flex;
   contain: content;
   margin-top: -6%;
-  margin-left: 88%;
+  margin-left: 89%;
   fill: white;
 }
 .modal-enter{
@@ -97,9 +124,47 @@ export default {
 }
 .cart-items{
   position: fixed;
+  min-width: 90%;
+  min-height: 60%;
+  margin-top: 7rem;
+}
+.cart-total{
   display: flex;
-  width: 80%;
-  height: 60%;
+  width:90%;
+  position: relative;
+}
+h2{
+  margin-left: 2rem;
+
+  font-family: PT Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 120%;
+  white-space: nowrap;
+  display: inline-flex;
+
+  color: #2F2926;
+}
+p {
+  position: fixed;
+  margin-left: 2rem;
+  margin-top: 3rem;
+
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 130%;
+
+  color: #2F2926;
+}
+.total-sum{
+ 
+}
+.point-line{
+  margin-left: 1rem;
+  padding-right: 1rem;
 }
 
 </style>

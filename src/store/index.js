@@ -77,6 +77,9 @@ export default new Vuex.Store({
     },
     getCoffeeByBean: state => (bean) => {
       return state.coffee.filter(cof => cof.bean == bean);
+    },
+    getCoffeById: state => (id) => {
+      return state.coffee.filter(cof => cof.id == id);
     }
   },
   mutations: {
