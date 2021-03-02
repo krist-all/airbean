@@ -50,6 +50,8 @@ export default {
   background: #fff;
   margin: 10px;
   padding: 10px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 }
 .modal-wrapper {
   display: table-cell;

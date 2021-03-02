@@ -5,18 +5,20 @@
           <AddPlus />
           </div>
       <div @click="modalAction()">
-          <h2 class="coffee">
+        <div class="coffee-name">
+          <h2>
               {{cof.name}}
-          </h2>      
-      </div>
-       <div class="point-line">
+          </h2> 
+           <div class="point-line">
             <PointLine />
-              </div>
-              <div class="price">
+          </div>   
+        </div>  
+      </div>
+           <div class="price">
                <h2>
                  {{cof.price}} kr
                </h2>
-              </div>
+              </div>   
           <p>
               {{cof.description}}
           </p>
@@ -52,9 +54,7 @@ export default {
 </script>
 
 <style scoped>
-.coffee{
-  cursor: pointer;
-}
+
 .coffee-info {
   display: flex;
   max-width: 80%;
@@ -62,7 +62,7 @@ export default {
   position: relative;
 }
 h2 {
-  display: inline-flex;
+  display:inline-flex;
   font-family: PT Serif;
   font-style: normal;
   font-weight: bold;
@@ -72,8 +72,10 @@ h2 {
 }
 
 .point-line {
-   margin-left: -4rem;
-  margin-top: 2rem;
+  margin-top: -2rem;
+  margin-left:5rem;
+  position:fixed;
+  
 }
 p {
   font-family: Work Sans;
@@ -87,5 +89,15 @@ p {
 }
 .add-plus {
   cursor: pointer;
+}
+.coffee-name{
+ 
+  cursor: pointer;
+  position: fixed;
+  
+}
+.price{
+  margin-left: 17rem;
+  position:fixed;
 }
 </style>

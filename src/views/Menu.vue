@@ -8,8 +8,10 @@
           Meny
     </h1>
     <div class="listcontainer">
-    <div v-for="cof in coffee" :key="cof.id" @click="addToCart(cof)">
-        <AddCoffee :cof="cof"/>
+    <div v-for="cof in coffee" :key="cof.id" >
+        <AddCoffee
+        @addToCart="addToCart"
+         :cof="cof"/>
     </div>
     </div>
     <div class="footer">

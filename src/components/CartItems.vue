@@ -9,13 +9,13 @@
         <PointLine/>
     </div>
     <div class="quantity">
-      <div @click="$emit()">
+      <div @click="$emit('addToCart', items)">
         <QuantUp/>
       </div>
     <div>
       {{items.quantity}}
     </div>
-      <div>
+      <div @click.prevent="$emit('removeItem', items)">
         <QuantDown/>
       </div>
     </div>
@@ -39,17 +39,7 @@ export default {
     PointLine,
     QuantUp,
     QuantDown
-  },
-  computed:{
-        coffee(){
-            return this.$store.getters.coffee;
-        },
-  },
-  methods:{
-        addToCart(cof){    
-            this.$store.commit('pushToCart', cof)
-         }
-     }
+  }  
 }
 </script>
 

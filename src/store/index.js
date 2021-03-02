@@ -2,13 +2,18 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import UUID, { uuid } from 'vue-uuid'
 
+// const cart = window.localStorage.getItem('cart')
+// const cartCount = window.localStorage.getItem('cartCount')
 
 Vue.use(Vuex)
 Vue.use(UUID)
 
 
 export default new Vuex.Store({
+  
   state: {
+    // cart: cart ? JSON.parse(cart) : [],
+    // cartCount: cartCount ? parseInt(cartCount) : 0,
     coffee: [
       {
         id: uuid.v4(),
@@ -53,10 +58,10 @@ export default new Vuex.Store({
         bean: "Robusta"
       }  
     ],
-    cart: [
+     cart: [
 
-    ],
-    cartCount: 0,
+     ],
+     cartCount: 0,
     
     user: null,
       // {
@@ -74,12 +79,6 @@ export default new Vuex.Store({
     },
     cart: state => {
       return state.cart;
-    },
-    getCoffeeByBean: state => (bean) => {
-      return state.coffee.filter(cof => cof.bean == bean);
-    },
-    getCoffeById: state => (id) => {
-      return state.coffee.filter(cof => cof.id == id);
     }
   },
   mutations: {
@@ -99,7 +98,24 @@ export default new Vuex.Store({
         Vue.set(cof, 'totalPrice', cof.price)
       }
       state.cartCount++;
-    }
+      // this.commit('saveCart')
+    },
+    removeItem(state, cof){
+      let foundCoffee = state.cart.find(item => item.id == cof.id );
+    
+      if(foundCoffee){
+        foundCoffee.quantity--;
+        foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;
+      } else{
+          console.log(cof)
+      }
+        state.cartCount--;
+      // this.commit('saveCart')
+    },
+    // saveCart(state){
+    //   window.localStorage.setItem('cart', JSON.stringify(state.cart));
+    //   window.localStorage.setItem('cartCount', state.cartCount);
+    // }
 
   },
   actions: {

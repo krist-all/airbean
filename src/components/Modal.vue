@@ -11,6 +11,8 @@
             <div class="cart-items">
             <div v-for="items in cart" :key="items.id" >
               <CartItems
+              @addToCart="addToCart"
+              @removeItem="removeItem"
               :items="items"
               
               />
@@ -59,7 +61,15 @@ export default {
         }
         return total
       }
-    }
+    },
+    methods:{
+        addToCart(cof){    
+            this.$store.commit('pushToCart', cof)
+         },
+         removeItem(cof){
+           this.$store.commit('removeItem', cof)
+         }
+     }
 }
 </script>
 
@@ -158,9 +168,7 @@ p {
 
   color: #2F2926;
 }
-.total-sum{
- 
-}
+
 .point-line{
   margin-left: 1rem;
   padding-right: 1rem;
