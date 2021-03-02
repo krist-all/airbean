@@ -4,34 +4,24 @@
           <div class="add-plus" @click="$emit('addToCart', cof)">
           <AddPlus />
           </div>
+      <div @click="modalAction()">
           <h2>
               {{cof.name}}
-  <div class="wrapper">
-    <div class="coffee-info">
-      <div class="add-plus">
-        <AddPlus />
+          </h2>      
       </div>
-      <div @click="modalAction()">
-        <h2>
-          {{ cofData.name }}
-          <div class="point-line">
+       <div class="point-line">
             <PointLine />
-          </div>
-          <div class="price">
-               {{cof.price}} kr
-          </div>
-          </h2>
+              </div>
+              <div class="price">
+               <h2>
+                 {{cof.price}} kr
+               </h2>
+              </div>
           <p>
               {{cof.description}}
           </p>
-          <div class="price">{{ cofData.price }} kr</div>
-        </h2>
-        <p>
-          {{ cofData.description }}
-        </p>
-      </div>
+    <vModal :modal="showModal" @close="modalAction" :cof="cof" />
     </div>
-    <vModal :modal="showModal" @close="modalAction" :cofData="cofData" />
   </div>
 </template>
 
@@ -45,29 +35,20 @@ export default {
     },
     components:{
         AddPlus,
-        PointLine
-    }
-  
-}
-  data() {
+        PointLine,
+        vModal
+    },
+     data() {
     return {
       showModal: false,
-    };
+    }
   },
-  props: {
-    cofData: {},
-  },
-  components: {
-    AddPlus,
-    PointLine,
-    vModal,
-  },
-  methods: {
+   methods: {
     modalAction() {
       this.showModal = !this.showModal;
     },
-  },
-};
+  }
+}
 </script>
 
 <style scoped>
@@ -88,7 +69,8 @@ h2 {
 }
 
 .point-line {
-  margin-left: -4rem;
+   margin-left: -4rem;
+  margin-top: 2rem;
 }
 p {
   font-family: Work Sans;

@@ -6,13 +6,13 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">{{cofData.name}}</h5>
+                <h5 class="modal-title">{{cof.name}}</h5>
                 <span class="close" aria-hidden="true" @click="modalAction()">&times;</span>
               </div>
               <div class="modal-body">
-                <p>Information: {{cofData.description}}</p>
-                <p>Pris: {{cofData.price}} Kr</p>
-                <p>Böna: {{cofData.bean}}</p>
+                <p>Information: {{cof.description}}</p>
+                <p>Pris: {{cof.price}} Kr</p>
+                <p>Böna: {{cof.bean}}</p>
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  props: ["modal", "cofData"],
+  props: ["modal", "cof"],
   methods: {
     modalAction() {
       this.$emit("close");
