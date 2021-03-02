@@ -5,7 +5,7 @@ import Menu from '../views/Menu.vue'
 import Coffee from '../views/Coffee.vue'
 import Profile from '../views/Profile.vue'
 import Status from '../views/Status.vue'
-import Modal2 from '../views/Modal2.vue'
+
 
 Vue.use(VueRouter)
 
@@ -36,11 +36,6 @@ const routes = [
     path: '/status',
     name: 'Status',
     component: Status
-  },
-  {
-    path: '/modal2',
-    name: 'Modal2',
-    component: Modal2
   },
 ]
 

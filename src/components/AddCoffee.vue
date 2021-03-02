@@ -5,7 +5,7 @@
           <AddPlus />
           </div>
       <div @click="modalAction()">
-          <h2>
+          <h2 class="coffee">
               {{cof.name}}
           </h2>      
       </div>
@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style scoped>
+.coffee{
+  cursor: pointer;
+}
 .coffee-info {
   display: flex;
   max-width: 80%;

@@ -14,42 +14,42 @@ export default new Vuex.Store({
         id: uuid.v4(),
         name: "Bryggkaffe",
         price: 49,
-        description: "Bryggd på månadens bönor",
+        description: "habitasse platea dictumst vestibulum rhoncus",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Caffé Doppio",
         price: 49,
-        description: "Bryggd på månadens bönor",
+        description: "egestas maecenas pharetra convallis posuere",
         bean: "Robusta"
       },
       {
         id: uuid.v4(),
         name: "Cappuccino",
         price: 49,
-        description: "Bryggd på månadens bönor",
+        description: "viverra vitae congue eu consequat",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Latte Macchiato",
         price: 49,
-        description: "Bryggd på månadens bönor",
+        description: "lectus arcu bibendum at varius",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Kaffe Latte",
         price: 49,
-        description: "Bryggd på månadens bönor",
+        description: "consequat mauris nunc congue nisi",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Cortado",
         price: 39,
-        description: "Bryggd på månadens bönor",
+        description: "eget dolor morbi non arcu",
         bean: "Robusta"
       }  
     ],
