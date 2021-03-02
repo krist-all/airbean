@@ -34,17 +34,19 @@ import Header from '../assets/Header'
 import Footer from '../assets/Footer'
 import CartButton from '../components/CartButton'
 export default {
-  data(){
-    return{
-      active: false
-    }
-  },
+    data(){
+      return{
+        active: false,
+        cofData: {},
+        title: '',
+      }
+    },
   components:{
     MenuButton,
     AddCoffee,
     Header,
     Footer,
-    CartButton
+    CartButton,
   },
    computed:{
          coffee(){
