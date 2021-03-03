@@ -1,6 +1,8 @@
 <template>
   <transition name="modal">
-      <div class="modal-mask" @click.right="$emit('close')">
+      <div class="modal-mask" >
+        <div class="exit-modal" @click="$emit('close')">
+        </div>
           <div class="modal-container">
             <div class="arrow-up">
                 <ArrowUp />
@@ -71,6 +73,9 @@ export default {
          },
          removeItem(cof){
            this.$store.commit('removeItem', cof)
+              
+          this.$store.commit('removeFromCart', cof)
+            
          },
          createOrderNum(){
            this.$store.commit('createOrderNum')
@@ -203,6 +208,9 @@ button{
 
   color: white;
 }
-
-
+.exit-modal{
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+}
 </style>

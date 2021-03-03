@@ -112,4 +112,17 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+p{
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 130%;
+}
+.close{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
 </style>

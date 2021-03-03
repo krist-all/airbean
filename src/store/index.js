@@ -24,42 +24,42 @@ export default new Vuex.Store({
         id: uuid.v4(),
         name: "Bryggkaffe",
         price: 49,
-        description: "habitasse platea dictumst vestibulum rhoncus",
+        description: "Habitasse platea dictumst vestibulum rhoncus.",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Caffé Doppio",
         price: 49,
-        description: "egestas maecenas pharetra convallis posuere",
+        description: "Egestas maecenas pharetra convallis posuere.",
         bean: "Robusta"
       },
       {
         id: uuid.v4(),
         name: "Cappuccino",
         price: 49,
-        description: "viverra vitae congue eu consequat",
+        description: "Viverra vitae congue eu consequat.",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Latte Macchiato",
         price: 49,
-        description: "lectus arcu bibendum at varius",
+        description: "Lectus arcu bibendum at varius.",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Kaffe Latte",
         price: 49,
-        description: "consequat mauris nunc congue nisi",
+        description: "Consequat mauris nunc congue nisi.",
         bean: "Arabica"
       },
       {
         id: uuid.v4(),
         name: "Cortado",
         price: 39,
-        description: "eget dolor morbi non arcu",
+        description: "Eget dolor morbi non arcu.",
         bean: "Robusta"
       }  
     ],
@@ -74,7 +74,6 @@ export default new Vuex.Store({
       //   epost: "",
       //   gdpr: false,
       // }
-
   },
 
   getters:{
@@ -83,7 +82,10 @@ export default new Vuex.Store({
     },
     cart: state => {
       return state.cart;
-    }
+    },
+     getCoffeeByBean: (state) => (bean) => {
+       return state.coffee.filter(item => item.bean == bean)
+     }
   },
   mutations: {
     setUser(state, payload) {
@@ -107,14 +109,12 @@ export default new Vuex.Store({
     },
     removeItem(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id );
-   
+     
       if(foundCoffee){
         foundCoffee.quantity--;
-        foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;
-           
-      } else { 
-      
-          console.log(cof)
+        foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;   
+      } else {   
+           console.log(cof);   
       }
         state.cartCount--;
       // this.commit('saveCart')
@@ -137,9 +137,10 @@ export default new Vuex.Store({
       state.orderNumber = null;
       state.cartCount = 0;
       // this.commit('saveCart')
-    }
-
-  
+    },
+    // filterByBean(getters){
+    //   getters.getCoffeeByBean;
+    // }
   },
   actions: {
   setUser(context, user) {

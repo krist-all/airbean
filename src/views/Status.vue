@@ -24,7 +24,7 @@ export default {
   },
   computed:{
     orderNumber(){
-      return this.$store.state.orderNumber;
+      return this.$store.state.orders[1];
     }
   },
   methods:{

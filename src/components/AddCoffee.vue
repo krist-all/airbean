@@ -75,7 +75,7 @@ h2 {
   position:fixed; 
 }
 p {
-  font-family: Work Sans;
+  font-family: sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
