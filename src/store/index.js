@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import UUID, { uuid } from 'vue-uuid'
+const short = require('short-uuid')
 
 // const cart = window.localStorage.getItem('cart')
 // const cartCount = window.localStorage.getItem('cartCount')
@@ -122,7 +123,8 @@ export default new Vuex.Store({
     //   window.localStorage.setItem('orderNumber', state.orderNumber);
     // },
     createOrderNum(state){
-      state.orderNumber = uuid.v4();
+      const translator = short()
+      state.orderNumber = translator.new();
       // this.commit('saveCart')
     }
   
