@@ -13,8 +13,9 @@
     <p class="bottomP">Roast id macchiato, single shot siphon mazagran milk fair trade est aroma a half and half and, so, galão iced to go, whipped as cream cup pumpkin spice iced. At extra, rich grinder, brewed to go, steamed half and half at, that, percolator macchiato trifecta and body as arabica dripper. In galão black java milk sit trifecta, robusta, acerbic café au lait instant shop latte. Seasonal bar shop filter aroma id, crema, affogato viennese cultivar aftertaste, seasonal, percolator cream black, galão flavour, milk aromatic turkish skinny crema.</p>
     
     <Owner/>
-    <Footer/> 
-
+    <div class="footer">
+      <Footer/> 
+    </div>
 </div>
 </template>
 
@@ -48,9 +49,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: start;
-  margin-top: -110px;
-  margin-left: 4.27%;
-  margin-right: 82.93%;
+  margin-top: -120px;
+  /* margin-left: 4.27%;
+  margin-right: 82.93%; */
 }
 h1 {
   padding-top: 27px;
@@ -78,6 +79,9 @@ p {
   padding-bottom: 40px;
 }
 
+.footer {
+  margin-top: 10px;
+}
 
 
 </style>
