@@ -1,18 +1,22 @@
 <template>
 <div class="container">
   <div class="userbkg">
+
+   <div class="logo">
     <AirbeanSmallLogo/>
+  </div>
+
     <h1>Välkommen till AirBean-familjen!</h1>
     <p>Genom att skapa ett konto nedan kan du spara och se din orderhistorik.</p>
 
     <div class="form">
       <form @submit.prevent="onclick">
-        <label for="namn">Namn</label><br>
+        <label for="namn">Namn</label>
         <input v-model="nameinput" type="text" class="inputtext"><br>
-        <label for="epost">E-post</label><br>
+        <label for="epost">E-post</label>
         <input v-model="emailinput" type="text" class="inputtext"><br>
-        <input v-model="radio" type="radio">
-        <label @click="radiobutton == !radiobutton" for="radio">GDPR ok!</label><br>
+        <input v-model="radio" type="radio" name="radio">
+        <label @click="radiobutton == !radiobutton" for="radio" class="radio">GDPR ok!</label>
         <input class="button" type="submit" value="Brew me a cup!"/>
       </form>
     </div>
@@ -54,6 +58,8 @@ methods: {
 </script>
 
 <style scoped>
+
+
 .container {
   display: flex;
   justify-content: center;
@@ -70,7 +76,9 @@ methods: {
   background-color: #F3E4E1;
   width: 90%;
   border-radius: 3px;
-  margin-top: 5rem;
+  margin-top: 5rem; 
+  height: 565.77px;
+
 }
 
 h1 {
@@ -79,19 +87,31 @@ h1 {
   font-weight: bold;
   font-size: 32px;
   line-height: 120%;
+  padding: 0;
+  margin: 0;
+}
+p {
+ padding: 0;
+ margin: 0;
 }
 .inputtext {
-  align-self: center;  
   border: 1px solid #2F2926;
-  box-sizing: border-box;
   border-radius: 6px;
   width: 310px;
   height: 48px;
   background-color: #F3E4E1;
 }
 
-.form {
-  text-align: left;
+form {
+display: flex;
+flex-direction: column;
+text-align: start;
+
+}
+
+
+.radio {
+  margin-bottom: 20px;
 }
 
 .button {
@@ -104,8 +124,10 @@ font-family: 'Pt Serif';
 font-weight: 700;
 font-size: 24px;
 border-style: none;
-align-self: center;
 cursor: pointer;
+align-self: center;
+/* margin-top: 44px;
+margin-bottom: 40.7px; */
 }
 
 .button:hover {
