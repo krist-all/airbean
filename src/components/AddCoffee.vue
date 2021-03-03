@@ -54,7 +54,6 @@ export default {
 </script>
 
 <style scoped>
-
 .coffee-info {
   display: flex;
   max-width: 80%;
@@ -70,12 +69,10 @@ h2 {
   line-height: 120%;
   white-space: nowrap;
 }
-
 .point-line {
   margin-top: -2rem;
   margin-left:5rem;
-  position:fixed;
-  
+  position:fixed; 
 }
 p {
   font-family: Work Sans;
@@ -91,10 +88,8 @@ p {
   cursor: pointer;
 }
 .coffee-name{
- 
   cursor: pointer;
   position: fixed;
-  
 }
 .price{
   margin-left: 17rem;
