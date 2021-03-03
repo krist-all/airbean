@@ -14,7 +14,6 @@
               @addToCart="addToCart"
               @removeItem="removeItem"
               :items="items"
-              
               />
             </div>
               <div class="cart-total">
@@ -33,7 +32,11 @@
                   inkl moms + drönarleverans
                 </p>
               </div>
+              <button @click="createOrderNum">
+                  Take my money!
+              </button>
             </div>
+            
           </div>
       </div>
   </transition>
@@ -68,6 +71,10 @@ export default {
          },
          removeItem(cof){
            this.$store.commit('removeItem', cof)
+         },
+         createOrderNum(){
+           this.$store.commit('createOrderNum')
+           this.$router.push('Status')
          }
      }
 }
@@ -168,10 +175,33 @@ p {
 
   color: #2F2926;
 }
-
 .point-line{
   margin-left: 1rem;
   padding-right: 1rem;
 }
+button{
+  display: flex;
+  height: 5%;
+  width: 60%;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  cursor: pointer;
+
+  background: #2F2926;
+  border-radius: 50px;
+  border-style: none;
+  
+  font-family: PT Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+
+  color: white;
+}
+
 
 </style>

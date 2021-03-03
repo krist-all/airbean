@@ -9,13 +9,13 @@
         <PointLine/>
     </div>
     <div class="quantity">
-      <div @click="$emit('addToCart', items)">
+      <div @click="$emit('addToCart', items)" class="arrows">
         <QuantUp/>
       </div>
     <div>
       {{items.quantity}}
     </div>
-      <div @click.prevent="$emit('removeItem', items)">
+      <div @click.prevent="$emit('removeItem', items)" class="arrows">
         <QuantDown/>
       </div>
     </div>
@@ -93,6 +93,9 @@ h2{
 }
 .point-line{
   margin-left: 9rem;
+}
+.arrows{
+  cursor: pointer;
 }
 
 </style>

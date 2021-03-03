@@ -4,6 +4,7 @@ import UUID, { uuid } from 'vue-uuid'
 
 // const cart = window.localStorage.getItem('cart')
 // const cartCount = window.localStorage.getItem('cartCount')
+// const orderNumber = window.localStorage.getItem('orderNumber')
 
 Vue.use(Vuex)
 Vue.use(UUID)
@@ -14,6 +15,7 @@ export default new Vuex.Store({
   state: {
     // cart: cart ? JSON.parse(cart) : [],
     // cartCount: cartCount ? parseInt(cartCount) : 0,
+    // orderNumber: orderNumber ? parseInt(orderNumber) : null,
     coffee: [
       {
         id: uuid.v4(),
@@ -59,11 +61,10 @@ export default new Vuex.Store({
       }  
     ],
      cart: [
-
      ],
      cartCount: 0,
-    
-    user: null,
+     orderNumber: null,
+     user: null,
       // {
       //   id: null,
       //   name: "",
@@ -91,22 +92,25 @@ export default new Vuex.Store({
       if(foundCoffee){
         foundCoffee.quantity++;
         foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;
+        
       } else {
         state.cart.push(cof)
 
         Vue.set(cof, 'quantity', 1);
-        Vue.set(cof, 'totalPrice', cof.price)
+        Vue.set(cof, 'totalPrice', cof.price);
       }
       state.cartCount++;
       // this.commit('saveCart')
     },
     removeItem(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id );
-    
+   
       if(foundCoffee){
         foundCoffee.quantity--;
         foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;
-      } else{
+           
+      } else { 
+      
           console.log(cof)
       }
         state.cartCount--;
@@ -115,8 +119,13 @@ export default new Vuex.Store({
     // saveCart(state){
     //   window.localStorage.setItem('cart', JSON.stringify(state.cart));
     //   window.localStorage.setItem('cartCount', state.cartCount);
-    // }
-
+    //   window.localStorage.setItem('orderNumber', state.orderNumber);
+    // },
+    createOrderNum(state){
+      state.orderNumber = uuid.v4();
+      // this.commit('saveCart')
+    }
+  
   },
   actions: {
   setUser(context, user) {

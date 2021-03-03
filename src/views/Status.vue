@@ -4,7 +4,7 @@
       <MenuButton />
     </div>
     <div class="drone">
-      <h4>ordernummer</h4>
+      <h4>ordernummer: {{orderNumber}}</h4>
       <StatusDrone />
     </div>
 
@@ -22,7 +22,12 @@ export default {
     MenuButton,
     StatusDrone,
   },
-};
+  computed:{
+    orderNumber(){
+      return this.$store.state.orderNumber;
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -46,7 +51,7 @@ h4 {
 }
 
 button {
-  width: 14rem;
+  width: 10rem;
   height: 4rem;
   line-height: 0em;
   background: white;
@@ -56,5 +61,6 @@ button {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
+  border-style: none;
 }
 </style>
