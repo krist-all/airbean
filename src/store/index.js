@@ -6,6 +6,7 @@ const short = require('short-uuid')
 // const cart = window.localStorage.getItem('cart')
 // const cartCount = window.localStorage.getItem('cartCount')
 // const orderNumber = window.localStorage.getItem('orderNumber')
+// const orders = window.localStorage.getItem('orders')
 
 Vue.use(Vuex)
 Vue.use(UUID)
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     // cart: cart ? JSON.parse(cart) : [],
     // cartCount: cartCount ? parseInt(cartCount) : 0,
     // orderNumber: orderNumber ? parseInt(orderNumber) : null,
+    // orders: orders? JSON.parse(orders) : [],
     coffee: [
       {
         id: uuid.v4(),
@@ -61,10 +63,10 @@ export default new Vuex.Store({
         bean: "Robusta"
       }  
     ],
-     cart: [
-     ],
+     cart: [],
      cartCount: 0,
      orderNumber: null,
+     orders: [],
      user: null,
       // {
       //   id: null,
@@ -121,12 +123,22 @@ export default new Vuex.Store({
     //   window.localStorage.setItem('cart', JSON.stringify(state.cart));
     //   window.localStorage.setItem('cartCount', state.cartCount);
     //   window.localStorage.setItem('orderNumber', state.orderNumber);
+    //   window.localStorage.setItem('orders', state.orders);
     // },
     createOrderNum(state){
       const translator = short()
       state.orderNumber = translator.new();
       // this.commit('saveCart')
+    },
+    pushToOrders(state){
+      state.orders.push(state.cart);
+      state.orders.push(state.orderNumber)
+      state.cart = [];
+      state.orderNumber = null;
+      state.cartCount = 0;
+      // this.commit('saveCart')
     }
+
   
   },
   actions: {

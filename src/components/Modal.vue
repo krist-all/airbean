@@ -74,6 +74,7 @@ export default {
          },
          createOrderNum(){
            this.$store.commit('createOrderNum')
+           this.$store.commit('pushToOrders')
            this.$router.push('Status')
          }
      }
