@@ -73,14 +73,12 @@ export default {
          },
          removeItem(cof){
            this.$store.commit('removeItem', cof)
-              
-          this.$store.commit('removeFromCart', cof)
-            
          },
          createOrderNum(){
            this.$store.commit('createOrderNum')
            this.$store.commit('pushToOrders')
            this.$router.push('Status')
+        
          }
      }
 }

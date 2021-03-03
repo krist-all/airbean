@@ -131,6 +131,7 @@ export default {
   position: fixed;
 }
 .dropdown{
+  cursor: pointer;
   display: flex;
   position: fixed;
   height: 3%;

@@ -109,12 +109,11 @@ export default new Vuex.Store({
     },
     removeItem(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id );
-     
       if(foundCoffee){
         foundCoffee.quantity--;
         foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;   
-      } else {   
-           console.log(cof);   
+      } else  { 
+        console.log(cof)
       }
         state.cartCount--;
       // this.commit('saveCart')
@@ -123,7 +122,7 @@ export default new Vuex.Store({
     //   window.localStorage.setItem('cart', JSON.stringify(state.cart));
     //   window.localStorage.setItem('cartCount', state.cartCount);
     //   window.localStorage.setItem('orderNumber', state.orderNumber);
-    //   window.localStorage.setItem('orders', state.orders);
+    //   window.localStorage.setItem('orders', JSON.stringify(state.orders));
     // },
     createOrderNum(state){
       const translator = short()
