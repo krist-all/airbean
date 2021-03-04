@@ -127,11 +127,9 @@ text-align: start;
 
 }
 .gdpr-text{
-  position: fixed;
-  margin-top: 11rem;
-  margin-left: 2rem; 
+  margin-top: -1rem;
+  margin-left: 2rem;
 }
-
 .radio {
   margin-bottom: 20px;
   display: inline;

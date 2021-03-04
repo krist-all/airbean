@@ -69,9 +69,7 @@ export default new Vuex.Store({
      orderNumber: null,
      date: null,
      orders: [],
-     user: [
-
-     ]
+     user: [],
 
   },
 
@@ -84,10 +82,6 @@ export default new Vuex.Store({
     },
      getCoffeeByBean: (state) => (bean) => {
        return state.coffee.filter(item => item.bean == bean)
-     },
-     findArray: (state) => (index) =>{
-
-       return state.user.findIndex((x) => x.id == index)
      },
      user: state => {
        return state.user;
@@ -151,11 +145,10 @@ export default new Vuex.Store({
       state.orderNumber = null;
       state.date = null;
       state.cartCount = 0;
+      
       // this.commit('saveCart')
     },
-    // filterByBean(getters){
-    //   getters.getCoffeeByBean;
-    // }
+    
   },
   actions: {
   setUser(context, user) {
