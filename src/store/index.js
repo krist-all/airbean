@@ -147,6 +147,7 @@ export default new Vuex.Store({
       state.user.push(order)
     
       state.cart = [];
+      state.orders = [];
       state.orderNumber = null;
       state.date = null;
       state.cartCount = 0;
