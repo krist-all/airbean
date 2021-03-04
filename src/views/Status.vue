@@ -58,18 +58,15 @@ h1 {
   font-weight: bold;
   font-size: 36px;
   line-height: 120%;
-
   color: white;
 }
 .h1box {
-  display: flex;
-  width: 70%;
-  margin-left: 15%;
+  width: 80%;
+  margin-left: 10%;
 }
 .Timer {
   font-family: sans-serif;
   font-style: normal;
-
   font-size: 22px;
   line-height: 120%;
   text-align: center;
