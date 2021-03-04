@@ -91,6 +91,7 @@ export default new Vuex.Store({
     setUser(state, payload) {
       state.user = payload;
     },
+
     pushToCart(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id )
       

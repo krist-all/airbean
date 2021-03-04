@@ -134,8 +134,8 @@ export default {
   cursor: pointer;
   display: flex;
   position: fixed;
-  height: 3%;
-  width: 60%;
+  height: 4%;
+  width: 65%;
   margin-top: 16rem;
   margin-left: 20%;
   padding-left: 1rem;

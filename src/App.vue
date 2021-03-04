@@ -6,11 +6,13 @@
 
 <script> 
 export default {
-  /* körs när appen ladads om. Gör en action som kollar om det finns något i local storage tex orderhistorik, användare etc. Om det finns lägger den med det i state*/
+  /* Körs när appen ladads om. Gör en action som kollar om det finns något i local storage. 
+  Tex orderhistorik, användare etc.Om det finns lägger den med det i state */
   created () {
 },
 }
 </script>
+
 
 <style>
 

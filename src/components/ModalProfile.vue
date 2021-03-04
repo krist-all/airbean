@@ -4,11 +4,7 @@
             <!-- profile picture -->
         </div>
 
-        <div class="nameEmail">
-            <h1>{{}}</h1>
-            <p>{{}}</p>
-        </div>
-
+        
         <div class="orderContainer">
             <h1>Orderhistorik</h1>
         </div>
