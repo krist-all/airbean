@@ -141,9 +141,10 @@ export default {
   padding-left: 1rem;
 
   border-radius: 3px;
-  border-style: none;
+  border-style: solid;
   justify-content: center;
   align-items: center;
+  background-color: #F3E4E1;
   
 }
 
