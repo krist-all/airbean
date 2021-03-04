@@ -60,7 +60,11 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Work+Sans&display=swap');
+/* 
+font-family: 'PT Sans', sans-serif;
+font-family: 'Work Sans', sans-serif; 
+*/
 
 .background{
   background-color:#2F2926;
