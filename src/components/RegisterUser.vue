@@ -61,14 +61,15 @@ methods: {
         gdpr: this.radio,
       }
     this.$store.dispatch("setUser", user)
-   
+    if(this.cart.length < 1){
+      this.$router.push('Profile')
+    } else{
     this.$store.commit('createOrderNum')  
     this.$store.commit('pushToOrders')
-   
+     }
     this.nameinput = ""
     this.emailinput = ""
-     
-    this.$emit('onClick')
+    
   }
 }
 }

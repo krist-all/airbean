@@ -8,7 +8,7 @@
     </div>
     <div v-if="userOrders.length < 1" >
       <RegisterUser
-      @onClick="onClick"
+  
       />
     </div>
     <div v-else >
@@ -16,16 +16,16 @@
       <ProfileImg/>
     </div>
     <div class="nameEmail">
-      <h1>{{}}</h1>
-      <p>{{}}</p>
+      <h1>{{user.name}}</h1>
+      <p>{{user.epost}}</p>
     </div>
     <div class="orderhistorik">
       <h1>Orderhistorik</h1>
-      <div v-for="(array, index) in userOrders" :key="index">
+      <div v-for="order in filterIndex" :key="order.ordernumber">
         <OrderHistory
-        :orderNumber="array"
-        :date="array"
-        :total="array"
+        :orderNumber="order.orderNumber"
+        :date="order.date"
+        :total="order.totalPrice"
         />
       </div>
     </div>
@@ -58,6 +58,12 @@ export default {
         userOrders(){
             return this.$store.getters.user
         },
+         user(){
+           return this.$store.getters.user[0]
+         },
+        orders(){
+          return this.$store.getters.user[1]
+        }
        
     },
       

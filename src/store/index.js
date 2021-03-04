@@ -7,7 +7,7 @@ const orderdate = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear
 // const cart = window.localStorage.getItem('cart')
 // const cartCount = window.localStorage.getItem('cartCount')
 // const orderNumber = window.localStorage.getItem('orderNumber')
-// const orders = window.localStorage.getItem('orders')
+
 
 Vue.use(Vuex)
 Vue.use(UUID)
@@ -19,7 +19,7 @@ export default new Vuex.Store({
     // cart: cart ? JSON.parse(cart) : [],
     // cartCount: cartCount ? parseInt(cartCount) : 0,
     // orderNumber: orderNumber ? parseInt(orderNumber) : null,
-    // orders: orders? JSON.parse(orders) : [],
+  
     coffee: [
       {
         id: uuid.v4(),
@@ -68,7 +68,6 @@ export default new Vuex.Store({
      cartCount: 0,
      orderNumber: null,
      date: null,
-     orders: [],
      user: [],
 
   },
@@ -85,6 +84,9 @@ export default new Vuex.Store({
      },
      user: state => {
        return state.user;
+     },
+     filterIndex: (state) => (index) => {
+       return state.user.filter(item => item.index == index)
      }
   },
   mutations: {
@@ -127,7 +129,7 @@ export default new Vuex.Store({
     //   window.localStorage.setItem('cart', JSON.stringify(state.cart));
     //   window.localStorage.setItem('cartCount', state.cartCount);
     //   window.localStorage.setItem('orderNumber', state.orderNumber);
-    //   window.localStorage.setItem('orders', JSON.stringify(state.orders));
+    
     // },
     createOrderNum(state){
       const translator = short()
@@ -136,16 +138,21 @@ export default new Vuex.Store({
       // this.commit('saveCart')
     },
     pushToOrders(state){
-      state.orders.push(state.cart);
-      state.orders.push(state.orderNumber);
-      state.orders.push(state.date);
-      state.user.push(state.orders);
+      let order = {
+        cart: state.cart,
+        orderNumber: state.orderNumber,
+        date: state.date
+      }
+     
+      state.user.push(order)
+    
       state.cart = [];
       state.orderNumber = null;
       state.date = null;
       state.cartCount = 0;
       // this.commit('saveCart')
     },
+   
   },
   actions: {
   setUser(context, user) {

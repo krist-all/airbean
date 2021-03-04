@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     orderNumber() {
-      return this.$store.state.orders[1];
+      return this.$store.getters.user[1].orderNumber;
     },
   },
   methods: {

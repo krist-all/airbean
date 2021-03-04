@@ -1,7 +1,11 @@
 <template>
   <div>
       <div>
+          <h3>
+              {{orderNumber}}     {{date}}
+          </h3>
           <p>
+              total ordersumma {{total}}
 
           </p>
       </div>
@@ -12,15 +16,18 @@
 
 <script>
 export default {
+    props:{
+        orderNumber: String,
+        date: String,
+        total: Number,
+    },
     
     computed:{
-        userOrders(){
-            return this.$store.state.user
-        }
+       
     }
 }
 </script>
 
 <style scoped>
 
-</style>>
+</style>

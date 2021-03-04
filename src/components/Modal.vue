@@ -82,8 +82,9 @@ export default {
              if(this.user.length < 1){
                this.$router.push('Profile')
             } else {
-             this.$router.push('Status')
              this.$store.commit('pushToOrders')
+             this.$router.push('Status')
+            
            }
          }
      }
