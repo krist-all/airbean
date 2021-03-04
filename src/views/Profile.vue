@@ -3,20 +3,22 @@
     <div>
       <Header/>
     </div>
-
     <div class="menu-button">
       <MenuButton />
     </div>
-
+    <div v-if="userOrders.length < 1" >
+      <RegisterUser
+      @onClick="onClick"
+      />
+    </div>
+    <div v-else >
     <div class="profile-img">
       <ProfileImg/>
     </div>
-
     <div class="nameEmail">
       <h1>{{}}</h1>
       <p>{{}}</p>
     </div>
-
     <div class="orderhistorik">
       <h1>Orderhistorik</h1>
       <div v-for="(array, index) in userOrders" :key="index">
@@ -27,9 +29,6 @@
         />
       </div>
     </div>
-
-    <div >
-      <RegisterUser/>
     </div>
 
   </div>
@@ -43,6 +42,11 @@ import ProfileImg from '@/assets/ProfileImg.vue'
 import OrderHistory from '@/components/OrderHistory.vue'
 
 export default {
+  data(){
+    return{
+      userRegistered: false
+    }
+  },
     components:{
         MenuButton,
         RegisterUser,
@@ -52,10 +56,11 @@ export default {
     },
     computed:{
         userOrders(){
-            return this.$store.state.user
-        }, 
-        
-    } 
+            return this.$store.getters.user
+        },
+       
+    },
+      
 }
 </script>
 

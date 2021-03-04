@@ -86,7 +86,6 @@ export default new Vuex.Store({
      user: state => {
        return state.user;
      }
-
   },
   mutations: {
     setUser(state, payload) {
@@ -145,10 +144,8 @@ export default new Vuex.Store({
       state.orderNumber = null;
       state.date = null;
       state.cartCount = 0;
-      
       // this.commit('saveCart')
     },
-    
   },
   actions: {
   setUser(context, user) {

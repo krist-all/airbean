@@ -65,11 +65,10 @@ methods: {
     this.$store.commit('createOrderNum')  
     this.$store.commit('pushToOrders')
    
-    
     this.nameinput = ""
     this.emailinput = ""
-
-  
+     
+    this.$emit('onClick')
   }
 }
 }
