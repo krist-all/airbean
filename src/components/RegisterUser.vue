@@ -40,6 +40,15 @@ export default {
   components: {
     AirbeanSmallLogo,
 },
+computed:{
+  user(){
+        return this.$store.getters.user
+      },
+  cart(){
+        return this.$store.getters.cart
+      },
+  
+},
 
 methods: {
   onclick() {
@@ -51,7 +60,12 @@ methods: {
         gdpr: this.radio,
       }
     this.$store.dispatch("setUser", user)
+   
+    this.$store.commit('createOrderNum')  
+    this.$store.commit('pushToOrders')
     
+    this.nameinput = ""
+    this.emailinput = ""
   }
 }
 }

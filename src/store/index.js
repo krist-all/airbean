@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import UUID, { uuid } from 'vue-uuid'
 const short = require('short-uuid')
-
+const today = new Date()
+const orderdate = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 // const cart = window.localStorage.getItem('cart')
 // const cartCount = window.localStorage.getItem('cartCount')
 // const orderNumber = window.localStorage.getItem('orderNumber')
@@ -66,14 +67,12 @@ export default new Vuex.Store({
      cart: [],
      cartCount: 0,
      orderNumber: null,
+     date: null,
      orders: [],
-     user: null,
-      // {
-      //   id: null,
-      //   name: "",
-      //   epost: "",
-      //   gdpr: false,
-      // }
+     user: [
+
+     ]
+
   },
 
   getters:{
@@ -85,13 +84,20 @@ export default new Vuex.Store({
     },
      getCoffeeByBean: (state) => (bean) => {
        return state.coffee.filter(item => item.bean == bean)
+     },
+     findArray: (state) => (index) =>{
+
+       return state.user.findIndex((x) => x.id == index)
+     },
+     user: state => {
+       return state.user;
      }
+
   },
   mutations: {
     setUser(state, payload) {
-      state.user = payload;
+      state.user.push(payload);
     },
-
     pushToCart(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id )
       
@@ -112,8 +118,13 @@ export default new Vuex.Store({
       let foundCoffee = state.cart.find(item => item.id == cof.id );
       if(foundCoffee){
         foundCoffee.quantity--;
-        foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price;   
-      } else  { 
+        foundCoffee.totalPrice = foundCoffee.quantity * foundCoffee.price; 
+        if(foundCoffee.quantity === 0){
+         let index = state.cart.findIndex((coffee) => coffee.id == foundCoffee.id);
+
+           state.cart.splice(index, 1);
+        }  
+      } else { 
         console.log(cof)
       }
         state.cartCount--;
@@ -128,13 +139,17 @@ export default new Vuex.Store({
     createOrderNum(state){
       const translator = short()
       state.orderNumber = translator.new();
+      state.date = orderdate;
       // this.commit('saveCart')
     },
     pushToOrders(state){
       state.orders.push(state.cart);
-      state.orders.push(state.orderNumber)
+      state.orders.push(state.orderNumber);
+      state.orders.push(state.date);
+      state.user.push(state.orders);
       state.cart = [];
       state.orderNumber = null;
+      state.date = null;
       state.cartCount = 0;
       // this.commit('saveCart')
     },
@@ -146,6 +161,7 @@ export default new Vuex.Store({
   setUser(context, user) {
     context.commit("setUser", user)
     localStorage.setItem("User", JSON.stringify(user));
+    
   }
 
   },

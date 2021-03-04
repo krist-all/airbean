@@ -19,6 +19,13 @@
 
     <div class="orderhistorik">
       <h1>Orderhistorik</h1>
+      <div v-for="(array, index) in userOrders" :key="index">
+        <OrderHistory
+        :orderNumber="array"
+        :date="array"
+        :total="array"
+        />
+      </div>
     </div>
 
     <div>
@@ -33,6 +40,7 @@ import MenuButton from '@/components/MenuButton.vue'
 import RegisterUser from '@/components/RegisterUser.vue'
 import Header from '../assets/Header.vue'
 import ProfileImg from '@/assets/ProfileImg.vue'
+import OrderHistory from '@/components/OrderHistory.vue'
 
 export default {
     components:{
@@ -40,8 +48,14 @@ export default {
         RegisterUser,
         Header,
         ProfileImg,
-
-    }
+        OrderHistory,
+    },
+    computed:{
+        userOrders(){
+            return this.$store.state.user
+        }, 
+        
+    } 
 }
 </script>
 

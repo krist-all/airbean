@@ -65,6 +65,9 @@ export default {
           total += items.totalPrice;
         }
         return total
+      },
+      user(){
+        return this.$store.getters.user
       }
     },
     methods:{
@@ -75,10 +78,13 @@ export default {
            this.$store.commit('removeItem', cof)
          },
          createOrderNum(){
-           this.$store.commit('createOrderNum')
-           this.$store.commit('pushToOrders')
-           this.$router.push('Status')
-        
+           this.$store.commit('createOrderNum')  
+             if(this.user.length < 1){
+               this.$router.push('Profile')
+            } else {
+             this.$router.push('Status')
+             this.$store.commit('pushToOrders')
+           }
          }
      }
 }
