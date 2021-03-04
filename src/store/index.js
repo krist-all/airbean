@@ -69,6 +69,7 @@ export default new Vuex.Store({
      orderNumber: null,
      date: null,
      user: [],
+     
 
   },
 
@@ -92,6 +93,11 @@ export default new Vuex.Store({
   mutations: {
     setUser(state, payload) {
       state.user.push(payload);
+      console.log('state')
+    },
+    setOrders(state,payload){
+      state.user.push(payload);
+
     },
     pushToCart(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id )
@@ -138,27 +144,40 @@ export default new Vuex.Store({
       // this.commit('saveCart')
     },
     pushToOrders(state){
+      const date = new Date()
       let order = {
         cart: state.cart,
         orderNumber: state.orderNumber,
-        date: state.date
+        date: state.date,
+        time: date.getTime()
       }
      
       state.user.push(order)
-    
+      
+      // user.push(order)
+      // console.log(user)
+      if(!localStorage.orders){
+        localStorage.orders = JSON.stringify([])
+
+      }
+      let storedOrders  = JSON.parse(localStorage.orders)
+      localStorage.orders = JSON.stringify([...storedOrders, order])
+      console.log(JSON.parse(localStorage.orders))
       state.cart = [];
-      state.orders = [];
       state.orderNumber = null;
       state.date = null;
       state.cartCount = 0;
-      // this.commit('saveCart')
+      
     },
    
   },
   actions: {
   setUser(context, user) {
     context.commit("setUser", user)
-    localStorage.setItem("User", JSON.stringify(user));
+    if (!localStorage.User){
+
+      localStorage.setItem("User", JSON.stringify(user));
+    }
     
   }
 

@@ -10,7 +10,7 @@
       <h1>Din beställning är på väg!</h1>
     </div>
     <div class="Timer">
-      <Timer />
+      <Timer :orderTime="order.time" />
     </div>
     <button @click="routeToProfile"><h3>Ok, cool!</h3></button>
   </div>
@@ -26,10 +26,13 @@ export default {
     Timer,
   },
   computed: {
-    orderNumber() {
-      return this.$store.getters.user[1].orderNumber;
-    },
-  },
+orderNumber() {
+return this.$store.getters.user && this.$store.getters.user[1] ? this.$store.getters.user[1][this.$store.getters.user[1].length-1].orderNumber: null;
+},
+order(){
+return this.$store.getters.user && this.$store.getters.user[1] ? this.$store.getters.user[1][this.$store.getters.user[1].length-1]: null;
+}
+},
   methods: {
     routeToProfile() {
       this.$router.push("Profile");

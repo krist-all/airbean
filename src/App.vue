@@ -6,10 +6,22 @@
 
 <script> 
 export default {
-  /* Körs när appen ladads om. Gör en action som kollar om det finns något i local storage. 
-  Tex orderhistorik, användare etc.Om det finns lägger den med det i state */
-  created () {
-    
+
+ created () {
+   let user
+   if(localStorage.User){
+
+     user = JSON.parse(localStorage.User)
+   }let orders
+   if(localStorage.orders)
+   {
+      orders= JSON.parse(localStorage.orders)
+
+   }
+   if (user)
+      this.$store.dispatch("setUser", user)
+      if (orders )
+      this.$store.commit('setOrders', orders)
 },
 }
 </script>

@@ -30,12 +30,16 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: Profile
+    component: Profile,
+   
   },
   {
     path: '/status',
     name: 'Status',
-    component: Status
+    component: Status,
+    meta: {
+      requiresAuth: true
+    }
   },
 ]
 
@@ -44,5 +48,19 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  if(to.meta.requiresAuth){
+    if (localStorage.User){
+      next()
+    }
+  
+  else{
+    if (from !== '/profile')
+    next('/profile')
+    
+  }
+  }else{
+    next()
+  }
+})
 export default router

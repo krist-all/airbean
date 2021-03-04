@@ -14,8 +14,8 @@
         <label for="namn">Namn</label>
         <input v-model="nameinput" type="text" class="inputtext"><br>
         <label for="epost">E-post</label>
-        <input v-model="emailinput" type="text" class="inputtext"><br>
-        <input v-model="radio" type="radio" name="radio">
+        <input v-model="emailinput" type="email" class="inputtext"><br>
+        <input v-model="radio" type="radio" name="radio" :value="true" required>
         <div class="gdpr-text">GDPR ok!</div>
         <label @click="radiobutton == !radiobutton" for="radio" class="radio"></label>
         <input class="button" type="submit" value="Brew me a cup!"/>
@@ -53,6 +53,10 @@ computed:{
 
 methods: {
   onclick() {
+    if (!this.radio){
+      alert('check the checkbox')
+      return
+    }
    const user = 
      {
         id: uuid.v4(),
@@ -108,10 +112,12 @@ h1 {
   padding: 0;
   margin: 0;
 }
+
 p {
  padding: 0;
  margin: 0;
 }
+
 .inputtext {
   border: 1px solid #2F2926;
   border-radius: 6px;
@@ -124,12 +130,12 @@ form {
 display: flex;
 flex-direction: column;
 text-align: start;
-
 }
 .gdpr-text{
   margin-top: -1rem;
   margin-left: 2rem;
 }
+
 .radio {
   margin-bottom: 20px;
   display: inline;
@@ -147,11 +153,9 @@ font-size: 24px;
 border-style: none;
 cursor: pointer;
 align-self: center;
-/* margin-top: 44px;
-margin-bottom: 40.7px; */
 }
 
 .button:hover {
-  background: #181514;
+background: #181514;
 }
 </style>
