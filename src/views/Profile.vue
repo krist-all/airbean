@@ -71,12 +71,17 @@ export default {
 }
 
 .menu-button {
-  /* position: fixed; */
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: -120px;
 }
 
 .profile-img {
+  padding-top: 10%;
   width: 100%;
 }
+
 .nameEmail {
   Font-family: 'Work Sans', sans-serif; 
   Color: white; 

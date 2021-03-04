@@ -60,10 +60,12 @@ h1 {
   line-height: 120%;
   color: white;
 }
+
 .h1box {
   width: 80%;
   margin-left: 10%;
 }
+
 .Timer {
   font-family: sans-serif;
   font-style: normal;
