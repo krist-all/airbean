@@ -16,7 +16,8 @@
         <label for="epost">E-post</label>
         <input v-model="emailinput" type="text" class="inputtext"><br>
         <input v-model="radio" type="radio" name="radio">
-        <label @click="radiobutton == !radiobutton" for="radio" class="radio">GDPR ok!</label>
+        <div class="gdpr-text">GDPR ok!</div>
+        <label @click="radiobutton == !radiobutton" for="radio" class="radio"></label>
         <input class="button" type="submit" value="Brew me a cup!"/>
       </form>
     </div>
@@ -63,9 +64,12 @@ methods: {
    
     this.$store.commit('createOrderNum')  
     this.$store.commit('pushToOrders')
+   
     
     this.nameinput = ""
     this.emailinput = ""
+
+  
   }
 }
 }
@@ -122,10 +126,15 @@ flex-direction: column;
 text-align: start;
 
 }
-
+.gdpr-text{
+  position: fixed;
+  margin-top: 11rem;
+  margin-left: 2rem; 
+}
 
 .radio {
   margin-bottom: 20px;
+  display: inline;
 }
 
 .button {
