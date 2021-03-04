@@ -17,14 +17,13 @@
       <p>{{}}</p>
     </div>
 
-    <div>
+    <div class="orderhistorik">
       <h1>Orderhistorik</h1>
     </div>
 
     <div>
       <RegisterUser/>
     </div>
-
 
   </div>
 </template>
@@ -41,11 +40,14 @@ export default {
         RegisterUser,
         Header,
         ProfileImg,
+
     }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+
 .background{
   background-color:#2F2926;
   width: 23rem;
@@ -62,6 +64,20 @@ export default {
   width: 100%;
 }
 .nameEmail {
-  color: white; 
+  Font-family: 'Work Sans', sans-serif; 
+  Color: white; 
 }
+
+p h1 {
+  opacity: 80%;
+}
+
+.orderhistorik {
+  Font-family: 'Work Sans', sans-serif; 
+  color: white;
+  text-align: start;
+  margin-left: 30px;
+}
+
+
 </style>
