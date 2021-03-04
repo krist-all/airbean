@@ -1,38 +1,41 @@
 <template>
   <div class="background">
     <div class="ordernum">
-    <h4>Ordernummer {{orderNumber}}</h4>
+      <h4>Ordernummer {{ orderNumber }}</h4>
     </div>
     <div class="drone">
-      
       <StatusDrone />
     </div>
     <div class="h1box">
-    <h1>Din beställning är på väg!</h1>
+      <h1>Din beställning är på väg!</h1>
     </div>
-    <h2>XX minuter</h2>
-    <button @click="routeToProfile"
-    ><h3>Ok, cool!</h3></button>
+    <div class="Timer">
+      <Timer />
+    </div>
+    <button @click="routeToProfile"><h3>Ok, cool!</h3></button>
   </div>
 </template>
 
 <script>
 import StatusDrone from "@/assets/StatusDrone.vue";
+import Timer from "../components/Timer.vue";
+
 export default {
   components: {
-    StatusDrone
+    StatusDrone,
+    Timer,
   },
-  computed:{
-    orderNumber(){
+  computed: {
+    orderNumber() {
       return this.$store.state.orders[1];
-    }
+    },
   },
-  methods:{
-    routeToProfile(){
-      this.$router.push('Profile')
-    }
-  }
-}
+  methods: {
+    routeToProfile() {
+      this.$router.push("Profile");
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -43,34 +46,33 @@ export default {
   contain: content;
   position: relative;
 }
-.menu-button{
+.menu-button {
   position: fixed;
 }
 .drone {
- margin-top: 3rem;
+  margin-top: 3rem;
 }
-h1{
+h1 {
   font-family: PT Serif;
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
   line-height: 120%;
-  
+
   color: white;
 }
-.h1box{
+.h1box {
   display: flex;
   width: 70%;
   margin-left: 15%;
 }
-h2{
+.Timer {
   font-family: sans-serif;
   font-style: normal;
-  font-weight: bold;
+
   font-size: 22px;
   line-height: 120%;
   text-align: center;
-
   color: white;
 }
 h4 {
@@ -79,7 +81,7 @@ h4 {
   font-weight: normal;
   font-size: 16px;
   line-height: 120%;
-  color: rgba(255, 255, 255, 0.7); 
+  color: rgba(255, 255, 255, 0.7);
 }
 button {
   cursor: pointer;
@@ -93,11 +95,11 @@ button {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color: #2F2926;
+  color: #2f2926;
   border-style: none;
   margin-top: 3rem;
 }
-.ordernum{
+.ordernum {
   margin-top: 6rem;
 }
 </style>
