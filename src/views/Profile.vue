@@ -61,4 +61,7 @@ export default {
 .profile-img {
   width: 100%;
 }
+.nameEmail {
+  color: white; 
+}
 </style>
