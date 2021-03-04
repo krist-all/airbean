@@ -8,7 +8,7 @@
     </div>
     <div v-if="userOrders.length < 1" >
       <RegisterUser
-      @onClick="onClick"/>
+      />
     </div>
     <div v-else >
     <div class="profile-img">
@@ -24,7 +24,7 @@
 <!-- Order history -->
     <div class="orderhistorik">
       <h1>Orderhistorik</h1>
-      <div v-for="order in filterIndex" :key="order.ordernumber">
+      <div v-for="order in userOrders" :key="order.ordernumber">
         <OrderHistory
         :orderNumber="order.orderNumber"
         :date="order.date"

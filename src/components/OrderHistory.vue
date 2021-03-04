@@ -29,5 +29,23 @@ export default {
 </script>
 
 <style scoped>
+h3{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 120%;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+p{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 120%;
+
+    color: rgba(255, 255, 255, 0.5);
+}
 
 </style>
