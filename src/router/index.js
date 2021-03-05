@@ -6,7 +6,6 @@ import Coffee from '../views/Coffee.vue'
 import Profile from '../views/Profile.vue'
 import Status from '../views/Status.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,9 +13,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-
   },
-
   {
     path: '/menu',
     name: 'Menu',
@@ -30,8 +27,7 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: Profile,
-   
+    component: Profile,  
   },
   {
     path: '/status',
@@ -53,11 +49,9 @@ router.beforeEach((to, from, next) => {
     if (localStorage.User){
       next()
     }
-  
   else{
     if (from !== '/profile')
-    next('/profile')
-    
+    next('/profile') 
   }
   }else{
     next()

@@ -21,15 +21,11 @@ export default {
     
     let time  = Math.floor(((this.orderTime/60000)-(currentTime/60000)))
     
-    
-      this.timeRemaining=   (this.timerCount+time)>=0?(this.timerCount+time):0
+    this.timeRemaining=   (this.timerCount+time)>=0?(this.timerCount+time):0
   },
-
   watch: {
     timeRemaining: {
       handler() {
-
-    
     setInterval(()=>{
       const date = new Date()
     const currentTime = date.getTime()
@@ -37,8 +33,6 @@ export default {
     
       this.timeRemaining=   (this.timerCount+time)>=0?(this.timerCount+time):0
     }, 5000)
-    
-    
       },
       immediate: true, 
     },
@@ -46,4 +40,3 @@ export default {
 };
 </script>
 
-<style scoped></style>

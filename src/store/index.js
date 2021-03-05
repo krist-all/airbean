@@ -3,23 +3,14 @@ import Vuex from 'vuex'
 import UUID, { uuid } from 'vue-uuid'
 const short = require('short-uuid')
 const today = new Date()
-const orderdate = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
-// const cart = window.localStorage.getItem('cart')
-// const cartCount = window.localStorage.getItem('cartCount')
-// const orderNumber = window.localStorage.getItem('orderNumber')
-
+const orderdate = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
 Vue.use(Vuex)
 Vue.use(UUID)
 
-
 export default new Vuex.Store({
   
   state: {
-    // cart: cart ? JSON.parse(cart) : [],
-    // cartCount: cartCount ? parseInt(cartCount) : 0,
-    // orderNumber: orderNumber ? parseInt(orderNumber) : null,
-  
     coffee: [
       {
         id: uuid.v4(),
@@ -69,10 +60,7 @@ export default new Vuex.Store({
      orderNumber: null,
      date: null,
      user: [],
-     
-
   },
-
   getters:{
     coffee: state =>{
       return state.coffee;
@@ -86,9 +74,6 @@ export default new Vuex.Store({
      user: state => {
        return state.user;
      },
-     filterIndex: (state) => (index) => {
-       return state.user.filter(item => item.index == index)
-     }
   },
   mutations: {
     setUser(state, payload) {
@@ -97,7 +82,6 @@ export default new Vuex.Store({
     },
     setOrders(state,payload){
       state.user.push(payload);
-
     },
     pushToCart(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id )
@@ -113,7 +97,6 @@ export default new Vuex.Store({
         Vue.set(cof, 'totalPrice', cof.price);
       }
       state.cartCount++;
-      // this.commit('saveCart')
     },
     removeItem(state, cof){
       let foundCoffee = state.cart.find(item => item.id == cof.id );
@@ -129,19 +112,11 @@ export default new Vuex.Store({
         console.log(cof)
       }
         state.cartCount--;
-      // this.commit('saveCart')
     },
-    // saveCart(state){
-    //   window.localStorage.setItem('cart', JSON.stringify(state.cart));
-    //   window.localStorage.setItem('cartCount', state.cartCount);
-    //   window.localStorage.setItem('orderNumber', state.orderNumber);
-    
-    // },
     createOrderNum(state){
       const translator = short()
       state.orderNumber = translator.new();
       state.date = orderdate;
-      // this.commit('saveCart')
     },
     pushToOrders(state){
       const date = new Date()
@@ -151,14 +126,10 @@ export default new Vuex.Store({
         date: state.date,
         time: date.getTime()
       }
-     
       state.user.push(order)
-      
-      // user.push(order)
-      // console.log(user)
+   
       if(!localStorage.orders){
         localStorage.orders = JSON.stringify([])
-
       }
       let storedOrders  = JSON.parse(localStorage.orders)
       localStorage.orders = JSON.stringify([...storedOrders, order])
@@ -167,9 +138,8 @@ export default new Vuex.Store({
       state.orderNumber = null;
       state.date = null;
       state.cartCount = 0;
-      
+      state.user = [];
     },
-   
   },
   actions: {
   setUser(context, user) {
@@ -178,9 +148,7 @@ export default new Vuex.Store({
 
       localStorage.setItem("User", JSON.stringify(user));
     }
-    
   }
-
   },
   modules:{
 

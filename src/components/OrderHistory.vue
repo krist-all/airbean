@@ -7,11 +7,8 @@
           </h3>
           <p>
               total ordersumma <span class="total">{{total}}</span>
-
           </p>
       </div>
-
-
   </div>
 </template>
 
@@ -21,10 +18,6 @@ export default {
         orderNumber: String,
         date: String,
         total: String,
-    },
-    
-    computed:{
-       
     }
 }
 </script>
@@ -35,31 +28,29 @@ export default {
 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 padding-top: 12px;
 }
-
 h3{
 margin: 0;
 display: flex;
 justify-content: space-between;
 font-family: 'Work Sans', sans-serif;
 }
-
 h3 .id{
 font-style: normal;
 font-weight: bold;
 font-size: 14px;
 line-height: 1.2;
+
 color: rgba(255, 255, 255, 0.7);
 }
-
 h3 .date{  
 font-style: normal;
 font-weight: normal;
 font-size: 14px;
 line-height: 1.2;
 text-align: right;
+
 color: rgba(255, 255, 255, 0.7);
 }
-
 p{
 font-family: 'Work Sans', sans-serif;
 font-style: normal;
@@ -73,7 +64,6 @@ padding-bottom: 12px;
 display: flex;
 justify-content: space-between;
 }
-
 p .total{
 margin-left: auto;
 }

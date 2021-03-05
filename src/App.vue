@@ -28,7 +28,6 @@ export default {
 
 
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +35,5 @@ export default {
   text-align: center;
   display: flex;
   justify-content: center;
-  
 }
-
 </style>

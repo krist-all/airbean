@@ -48,6 +48,7 @@
 import ArrowUp from '../assets/ArrowUp'
 import CartItems from './CartItems'
 import PointLine from '../assets/PointLine'
+import {mapGetters} from 'vuex'
 export default {
     components:{
         CartItems,
@@ -68,7 +69,11 @@ export default {
       },
       user(){
         return this.$store.getters.user
-      }
+      },
+      ...mapGetters({
+          userGetter: 'user',
+
+        }),
     },
     methods:{
         addToCart(cof){    
@@ -80,8 +85,9 @@ export default {
          createOrderNum(){
            this.$store.commit('createOrderNum')  
              if(this.user.length < 1){
+               this.$store.commit('pushToOrders')
                this.$router.push('Profile')
-            } else {
+            } else if(this.userGetter[0]) {
              this.$store.commit('pushToOrders')
              this.$router.push('Status')
             
