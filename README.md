@@ -1,9 +1,9 @@
 # airbean
 
 **Vi har valt att arbeta agilt efter scrum. Alla i gruppen är i utvecklingsteamet, 
-Malin agerar som Scrum Master och Kristjan som Produktägare.
+Malin agerar som Scrum Master och Kristjan som Produktägare.**
 
-Vi håller daily scrum varje morgon vi arbetar och har även längre sprint möten var tredje dag där vi går igenom vår kanban-board samt
+**Vi håller daily scrum varje morgon vi arbetar och har även längre sprint möten var tredje dag där vi går igenom vår kanban-board samt
 applikation för att se hur långt alla har kommit och vad finns kvar att göra.**
 
 23/3 Möte
