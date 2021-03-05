@@ -122,6 +122,7 @@ p {
   width: 18rem;
   height: 3rem;
   background-color: #F3E4E1;
+  padding-left: 1rem;
 }
 
 form {
