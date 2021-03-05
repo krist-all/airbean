@@ -6,18 +6,33 @@
                   {{orderNumber}}</span> <span class="date">    {{date}}</span>
           </h3>
           <p>
-              total ordersumma <span class="total">{{total}}</span>
+              total ordersumma <span class="total">{{totalPrice}} kr</span>
           </p>
       </div>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
     props:{
         orderNumber: String,
         date: String,
-        total: String,
+        total: Array,
+    },
+    computed:{
+       ...mapGetters({
+          userGetter: 'user',
+
+        }),
+        totalPrice(){
+        let total = 0;
+
+        for(let items of this.total){
+          total += items.totalPrice;
+        }
+        return total
+      },
     }
 }
 </script>

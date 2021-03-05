@@ -25,7 +25,7 @@
         <OrderHistory
         :orderNumber="order.orderNumber"
         :date="order.date"
-        :total="order.cart[0].totalPrice+' kr'"
+        :total="order.cart"
         />
       </div>
       <div class="total">
@@ -51,7 +51,6 @@ export default {
       userOrders: '',
       user: '',
       orders: '',
-      renderComponent: true,
     }
   },
     components:{
